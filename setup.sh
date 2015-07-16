@@ -8,3 +8,5 @@ git clone https://github.com/gmarik/Vundle.vim.git ~/dotfiles/vimplugins/Vundle.
 ln -s ~/dotfiles/zsh/zshrc ~/.zshrc
 ln -s ~/dotfiles/zsh/zshenv ~/.zshenv
 ln -s ~/dotfiles/vim/vimrc ~/.vimrc
+
+vim +PluginInstall +qall
