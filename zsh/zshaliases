@@ -1,3 +1,0 @@
-alias cal="ncal -3w"
-alias ls="ls -CF --color=auto"
-
