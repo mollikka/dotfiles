@@ -1,0 +1,17 @@
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+setopt appendhistory beep notify
+bindkey -e
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)(?)*==34=00}:${(s.:.)LS_COLORS}")';
+
+RPROMPT='%{%F{blue}%}%*'
+PROMPT="%{%F{blue}%}%n@%m%{%F{white}%}%c%{%F{blue}%}$%{%f%}"
+setopt CORRECT
+
+source $HOME/.zshaliases

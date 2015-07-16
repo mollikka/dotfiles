@@ -1,0 +1,3 @@
+setopt NO_GLOBAL_RCS
+
+export EDITOR=nano
