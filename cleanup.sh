@@ -1,4 +1,4 @@
-rm -rf ~/dotfiles/vimplugins
+rm -rf ~/.vimplugins
 
 mkdir ~/old_dotfiles
 mv ~/.zshrc ~/old_dotfiles/

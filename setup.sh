@@ -2,7 +2,7 @@
 source ~/dotfiles/cleanup.sh
 
 #load vundle, vim plugin manager
-git clone https://github.com/gmarik/Vundle.vim.git ~/dotfiles/vimplugins/Vundle.vim
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vimplugins/Vundle.vim
 
 #link dotfiles to home directory
 ln -s ~/dotfiles/zsh/zshrc ~/.zshrc
