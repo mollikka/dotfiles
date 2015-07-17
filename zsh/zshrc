@@ -16,3 +16,4 @@ setopt CORRECT
 
 alias ls="ls -CF --color=auto"
 
+alias pytdd="watch python -m unittest discover tests -f"
