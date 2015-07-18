@@ -7,6 +7,7 @@
 	lg = log --graph --color --pretty=format:"%C(yellow)%H%C(green)%d%C(reset)%n%x20%cd%n%x20%cn%x20(%ce)%n%x20%s%n"
 	s = status -sb
 	c = commit
-	p = push
+	ps = push
+        pl = pull
         a = add
         undo = reset --soft HEAD~1
