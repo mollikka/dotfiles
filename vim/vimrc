@@ -4,7 +4,10 @@ set rtp+=~/.vimplugins/Vundle.vim
 call vundle#begin("~/.vimplugins")
 Plugin 'gmarik/Vundle.vim'
 
-
+Plugin 'easymotion/vim-easymotion'
+Plugin 'tpope/vim-surround'
+Plugin 'JuliaLang/julia-vim'
+Plugin 'altercation/vim-colors-solarized' 
 
 call vundle#end()
 filetype plugin indent on
@@ -35,5 +38,39 @@ set ruler
  
 set undolevels=1000	
 set backspace=indent,eol,start	
- 
-syntax on
+
+"theme
+
+syntax enable
+let g:solarized_termtrans = 1
+set background=dark
+colorscheme solarized
+
+"bindings
+
+"""""
+"https://gist.github.com/AndrewRadev/1171559
+
+onoremap an :<c-u>call <SID>NextTextObject('a')<cr>
+xnoremap an :<c-u>call <SID>NextTextObject('a')<cr>
+onoremap in :<c-u>call <SID>NextTextObject('i')<cr>
+xnoremap in :<c-u>call <SID>NextTextObject('i')<cr>
+
+function! s:NextTextObject(motion)
+    echo
+    let c = nr2char(getchar())
+    exe "normal! f".c."v".a:motion.c
+endfunction
+"""""
+
+
+let g:EasyMotion_do_mapping = 0
+
+let g:EasyMotion_keys = 'qwertasdfxcgtvbnhypm1234567890uiojkl'
+
+let g:EasyMotion_re_anywhere = '\v(<.|^)'
+
+
+
+nmap q <plug>(easymotion-jumptoanywhere)
+

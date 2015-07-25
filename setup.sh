@@ -9,5 +9,7 @@ ln -s ~/dotfiles/zsh/zshrc ~/.zshrc
 ln -s ~/dotfiles/zsh/zshenv ~/.zshenv
 ln -s ~/dotfiles/vim/vimrc ~/.vimrc
 ln -s ~/dotfiles/git/gitconfig ~/.gitconfig
+mkdir -p ~/.config/terminator
+ln -s ~/dotfiles/terminator/config ~/.config/terminator/config
 
 vim +PluginInstall +qall
