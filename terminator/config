@@ -1,4 +1,6 @@
 [global_config]
+  window_state = fullscreen
+  inactive_color_offset = 0.66
   title_transmit_bg_color = "#d30102"
   focus = system
 [keybindings]
