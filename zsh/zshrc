@@ -15,5 +15,3 @@ PROMPT="%{%F{blue}%}%n@%m%{%F{white}%}%c%{%F{blue}%}$%{%f%}"
 setopt CORRECT
 
 alias ls="ls -CF --color=auto"
-
-alias pytdd="watch python -m unittest discover -f"
