@@ -13,9 +13,16 @@ call vundle#end()
 filetype plugin indent on
 
 set number	
-set linebreak	
-set showbreak=+++	
-set textwidth=80	
+
+" wrapping
+" http://blog.ezyang.com/2010/03/vim-textwidth/
+set linebreak
+set textwidth=79
+set formatoptions=cqt
+set wrapmargin=0
+set colorcolumn=+1
+"
+
 set showmatch	
 	
 set errorbells	
@@ -42,6 +49,7 @@ set backspace=indent,eol,start
 "theme
 
 syntax enable
+set cursorline
 let g:solarized_termtrans = 1
 set background=dark
 colorscheme solarized
