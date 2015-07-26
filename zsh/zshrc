@@ -16,5 +16,6 @@ setopt CORRECT
 
 alias ls="ls -CF --color=auto"
 
+# http://www.unix.com/solaris/54552-what-command-can-display-files-tree.html
 alias tree="find . -maxdepth 2 -not -path '*/\.*' -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 
