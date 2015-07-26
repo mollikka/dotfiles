@@ -15,11 +15,11 @@ zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:
 # Set prompt to minimal if in small window
 set_prompt()
 {
-    if [ $COLUMNS -gt 60 ]; then
+    if [ $COLUMNS -gt 79 ]; then
     	
 PROMPT="%{%F{blue}%}%n@%m%{%F{white}%}%c%{%F{blue}%}%#%{%f%}"
     	RPROMPT='%{%F{blue}%}%*'
-    elif [ $COLUMNS -gt 40 ]; then
+    elif [ $COLUMNS -gt 59 ]; then
     	
 PROMPT="%{%F{blue}%}%n@%m%{%F{white}%}%c%{%F{blue}%}%#%{%f%}"
         RPROMPT=''
