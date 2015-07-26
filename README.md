@@ -2,6 +2,7 @@
 ## Lauri's Unix preferences
 
 I wrote and collected these settings that make me enjoy Unix more.
+Notice the original links in many of the config files.
 
 ## Setup
 
