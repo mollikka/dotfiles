@@ -11,4 +11,4 @@ I wrote and collected these settings that make me enjoy Unix more.
 4. `cd ~/dotfiles`
 5. `bash setup.sh`
 
-Optional: Install `terminator` GUI terminal emulator.
+Optional: Install `xfce4` desktop environment.
