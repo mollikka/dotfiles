@@ -16,10 +16,12 @@ zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:
 set_prompt()
 {
     if [ $COLUMNS -gt 60 ]; then
-    	PROMPT="%{%F{blue}%}%n@%m%{%F{white}%}%c%{%F{blue}%}$%{%f%}"
+    	
+PROMPT="%{%F{blue}%}%n@%m%{%F{white}%}%c%{%F{blue}%}%#%{%f%}"
     	RPROMPT='%{%F{blue}%}%*'
     elif [ $COLUMNS -gt 40 ]; then
-    	PROMPT="%{%F{blue}%}%n@%m%{%F{white}%}%c%{%F{blue}%}$%{%f%}"
+    	
+PROMPT="%{%F{blue}%}%n@%m%{%F{white}%}%c%{%F{blue}%}%#%{%f%}"
         RPROMPT=''
     else
 	PROMPT="%{%F{blue}%}$%{%f%}"
@@ -35,6 +37,7 @@ TRAPWINCH ()
 setopt CORRECT
 
 alias ls="ls -CF --color=auto"
+alias su="su -p"
 
 # http://www.unix.com/solaris/54552-what-command-can-display-files-tree.html
 alias tree="find . -maxdepth 2 -not -path '*/\.*' -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
