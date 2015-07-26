@@ -8,6 +8,7 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'tpope/vim-surround'
 Plugin 'JuliaLang/julia-vim'
 Plugin 'altercation/vim-colors-solarized' 
+Plugin 'kien/rainbow_parentheses.vim' 
 
 call vundle#end()
 filetype plugin indent on
@@ -53,6 +54,26 @@ set cursorline
 let g:solarized_termtrans = 1
 set background=dark
 colorscheme solarized
+
+"parentheses coloring
+
+let g:rbpt_colorpairs = [
+    \ ['gray',        'RoyalBlue3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['red',         'firebrick3'],
+    \ ]
+
+let g:rbpt_max = 8
+
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 
 "bindings
 
