@@ -11,5 +11,6 @@ ln -s ~/dotfiles/vim/vimrc ~/.vimrc
 ln -s ~/dotfiles/git/gitconfig ~/.gitconfig
 mkdir -p ~/.config/xfce4/terminal/
 ln -s ~/dotfiles/xfce4/terminalrc ~/.config/xfce4/terminal/terminalrc
+ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
 
 vim +PluginInstall +qall
