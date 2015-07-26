@@ -6,7 +6,7 @@ Notice the original links in many of the config files.
 
 ## Setup
 
-1. Install `git`, `vim`, `zsh` and `inotify-tools`.
+1. Install `git`, `vim`, `zsh`, `tmux` and `inotify-tools`.
 2. `cd`
 3. `git clone git@github.com:mollikka/dotfiles.git`
 4. `cd ~/dotfiles`
