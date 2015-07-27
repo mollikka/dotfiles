@@ -2,7 +2,7 @@
 	email = lauri.tervonen@aalto.fi
 	name = Lauri Tervonen
 [push]
-	default = simple
+	default = current
 [alias]
 	lg = log --graph --color --pretty=format:"%C(yellow)%H%C(green)%d%C(reset)%n%x20%cd%n%x20%cn%x20(%ce)%n%x20%s%n"
 	s = status -sb
