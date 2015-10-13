@@ -83,6 +83,9 @@ alias tree="find . -maxdepth 2 -not -path '*/\.*' -print | sed -e 's;[^/]*/;|___
 source ~/.zshplugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main)
 
+search() {
+    grep -nr $1 $2
+}
 
 #hopefully there aren't any major local edits, but if there are...
 LOCALS=~/dotfiles/zsh/localrc
