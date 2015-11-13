@@ -10,4 +10,5 @@
 	ps = push
         pl = pull
         a = add
+        co = checkout
         undo = reset --soft HEAD~1
