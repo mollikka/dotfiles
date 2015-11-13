@@ -41,7 +41,9 @@ set shiftwidth=4
 set smartindent	
 set smarttab	
 set softtabstop=4	
- 
+
+set clipboard=unnamedplus
+
 set ruler	
  
 set undolevels=1000	
