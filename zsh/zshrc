@@ -79,6 +79,8 @@ alias su="su -p"
 # http://www.unix.com/solaris/54552-what-command-can-display-files-tree.html
 alias tree="find . -maxdepth 2 -not -path '*/\.*' -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 
+alias ultron="chromium"
+
 #syntax highlight plugin
 source ~/.zshplugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main)
