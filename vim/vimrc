@@ -37,7 +37,7 @@ set incsearch
 set autoindent	
 set cindent	
 set expandtab	
-set shiftwidth=4	
+set shiftwidth=2	
 set smartindent	
 set smarttab	
 set softtabstop=4	
@@ -64,10 +64,8 @@ let g:rbpt_colorpairs = [
     \ ['darkmagenta', 'DarkOrchid3'],
     \ ['brown',       'firebrick3'],
     \ ['Darkblue',    'firebrick3'],
-    \ ['darkred',     'DarkOrchid3'],
     \ ['darkgreen',   'RoyalBlue3'],
     \ ['darkcyan',    'SeaGreen3'],
-    \ ['red',         'firebrick3'],
     \ ]
 
 let g:rbpt_max = 8
