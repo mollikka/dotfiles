@@ -10,10 +10,24 @@ Plugin 'JuliaLang/julia-vim'
 Plugin 'altercation/vim-colors-solarized' 
 Plugin 'kien/rainbow_parentheses.vim' 
 
+Plugin 'scrooloose/syntastic'
+
 call vundle#end()
 filetype plugin indent on
 
 set number	
+
+"syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_auto_jump = 3
+
 
 " wrapping
 " http://blog.ezyang.com/2010/03/vim-textwidth/
