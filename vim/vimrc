@@ -14,12 +14,29 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'kien/rainbow_parentheses.vim' 
 
 Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 call vundle#end()
 filetype plugin indent on
 
 set number	
 
+"nerdtree
+map <C-n> :NERDTreeToggle<CR>
+
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif "close if only nerdtree is open
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "M",
+    \ "Staged"    : "+",
+    \ "Untracked" : "?",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "¤",
+    \ "Deleted"   : "-",
+    \ "Dirty"     : "!",
+    \ "Clean"     : "✔︎",
+    \ "Unknown"   : "?"
+    \ }
 "syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -119,4 +136,5 @@ let g:EasyMotion_re_anywhere = '\v(<.|^)'
 
 
 nmap q <plug>(easymotion-jumptoanywhere)
+
 
