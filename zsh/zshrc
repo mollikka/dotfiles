@@ -91,6 +91,14 @@ search() {
     grep -nr $1 $2
 }
 
+#xfce terminal title to working directory
+case $TERM in
+  xterm*)
+    precmd () {print -Pn "\e]0;%~\a"}
+    ;;
+esac
+
+
 #hopefully there aren't any major local edits, but if there are...
 LOCALS=~/dotfiles/zsh/localrc
 if [ -f $LOCALS ]; then
