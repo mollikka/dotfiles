@@ -20,11 +20,8 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 call vundle#end()
 filetype plugin indent on
 
-set number	
-
 "nerdtree
 map <C-n> :NERDTreeToggle<CR>
-
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif "close if only nerdtree is open
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "M",
@@ -56,18 +53,25 @@ set textwidth=79
 set formatoptions=cq
 set wrapmargin=0
 set colorcolumn=+1
-"
 
-set showmatch	
-	
+"generic
+set hidden
 set errorbells	
 set visualbell	
- 
+set clipboard=unnamedplus
+set ruler
+set undolevels=1000	
+set backspace=indent,eol,start	
+set number	
+
+"search
+set showmatch	
 set hlsearch	
 set smartcase	
 set ignorecase	
 set incsearch	
  
+"indent
 set autoindent	
 set cindent	
 set expandtab	
@@ -76,15 +80,7 @@ set smartindent
 set smarttab	
 set softtabstop=4	
 
-set clipboard=unnamedplus
-
-set ruler	
- 
-set undolevels=1000	
-set backspace=indent,eol,start	
-
 "theme
-
 syntax enable
 set cursorline
 let g:solarized_termtrans = 1
@@ -101,9 +97,7 @@ let g:rbpt_colorpairs = [
     \ ['darkgreen',   'RoyalBlue3'],
     \ ['darkcyan',    'SeaGreen3'],
     \ ]
-
 let g:rbpt_max = 8
-
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
@@ -126,15 +120,10 @@ function! s:NextTextObject(motion)
 endfunction
 """""
 
-
+"easymotion
 let g:EasyMotion_do_mapping = 0
-
 let g:EasyMotion_keys = 'qwertasdfxcgtvbnhypm1234567890uiojkl'
-
 let g:EasyMotion_re_anywhere = '\v(<.|^)'
-
-
-
 nmap q <plug>(easymotion-jumptoanywhere)
 
 
