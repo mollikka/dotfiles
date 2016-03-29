@@ -70,7 +70,8 @@ set hlsearch
 set smartcase	
 set ignorecase	
 set incsearch	
- 
+nmap <silent> ,/ :nohlsearch<CR> ",/ to clear search
+
 "indent
 set autoindent	
 set cindent	
@@ -86,6 +87,8 @@ set cursorline
 let g:solarized_termtrans = 1
 set background=dark
 colorscheme solarized
+set list
+set listchars=tab:>.,trail:.
 
 "parentheses coloring
 
