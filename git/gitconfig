@@ -6,9 +6,9 @@
 [alias]
 	lg = log --graph --color --pretty=format:"%C(yellow)%H%C(green)%d%C(reset)%n%x20%cd%n%x20%cn%x20(%ce)%n%x20%s%n"
 	s = status -sb
-	c = commit
+	c = commit -m
 	ps = push
         pl = pull
-        a = add
+        a = add -p
         co = checkout
         undo = reset --soft HEAD~1
