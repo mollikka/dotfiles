@@ -12,6 +12,7 @@ ln -s ~/dotfiles/git/gitconfig ~/.gitconfig
 mkdir -p ~/.config/xfce4/terminal/
 ln -s ~/dotfiles/xfce4/terminalrc ~/.config/xfce4/terminal/terminalrc
 ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
+ln -s ~/dotfiles/openscad/openscad.conf ~/.config/OpenSCAD/OpenSCAD.conf
 
 #load vim plugins
 vim +PluginInstall +qall
