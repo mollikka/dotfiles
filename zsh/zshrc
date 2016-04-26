@@ -78,6 +78,11 @@ setopt CORRECT
 alias ls="ls -CF --color=auto"
 alias su="su -p"
 
+# http://stackoverflow.com/questions/16956810/finding-all-files-containing-a-text-string-on-linux
+findword () {
+  grep -rnw "$1" -e "$2"
+}
+
 # http://www.unix.com/solaris/54552-what-command-can-display-files-tree.html
 alias tree="find . -maxdepth 2 -not -path '*/\.*' -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 
