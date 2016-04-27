@@ -17,7 +17,7 @@ set_prompt()
 {
     if [ $COLUMNS -gt 60 ]; then
 	PROMPT="%{%F{blue}%}%n@%m%{%F{white}%}%c%{%F{blue}%}%#%{%f%}"
-        RPROMPT=''
+        RPROMPT='%{%F{white}%}%D{%H%M}'
     else
 	PROMPT="%{%F{blue}%}$%{%f%}"
     	RPROMPT=''
