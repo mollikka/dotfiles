@@ -1,12 +1,15 @@
-rm -rf ~/.vimplugins
-rm -rf ~/.zshplugins
+#!/bin/sh
+set -euf -o pipefail
 
-rm -r ~/old_dotfiles
-mkdir ~/old_dotfiles
-mv ~/.zshrc ~/old_dotfiles/
-mv ~/.zshenv ~/old_dotfiles/
-mv ~/.vimrc ~/old_dotfiles/
-mv ~/.gitconfig ~/old_dotfiles/
-mv ~/.config/xfce4/terminal/terminalrc ~/old_dotfiles/
-mv ~/.tmux.conf ~/old_dotfiles/
-mv ~/.config/OpenSCAD/OpenSCAD.conf ~/old_dotfiles/
+rm -rf $HOME/.vimplugins
+rm -rf $HOME/.zshplugins
+
+rm -r $HOME/old_dotfiles
+mkdir $HOME/old_dotfiles
+mv $HOME/.zshrc $HOME/old_dotfiles/
+mv $HOME/.zshenv $HOME/old_dotfiles/
+mv $HOME/.vimrc $HOME/old_dotfiles/
+mv $HOME/.gitconfig $HOME/old_dotfiles/
+mv $HOME/.config/xfce4/terminal/terminalrc $HOME/old_dotfiles/
+mv $HOME/.tmux.conf $HOME/old_dotfiles/
+mv $HOME/.config/OpenSCAD/OpenSCAD.conf $HOME/old_dotfiles/

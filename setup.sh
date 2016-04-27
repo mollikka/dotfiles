@@ -1,21 +1,24 @@
+#!/bin/sh
+set -euf -o pipefail
+
 #cleanup
-source ~/dotfiles/cleanup.sh
+source $HOME/dotfiles/cleanup.sh
 
 #load vundle, vim plugin manager
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vimplugins/Vundle.vim
+git clone https://github.com/gmarik/Vundle.vim.git $HOME/.vimplugins/Vundle.vim
 
 #link dotfiles to home directory
-ln -s ~/dotfiles/zsh/zshrc ~/.zshrc
-ln -s ~/dotfiles/zsh/zshenv ~/.zshenv
-ln -s ~/dotfiles/vim/vimrc ~/.vimrc
-ln -s ~/dotfiles/git/gitconfig ~/.gitconfig
-mkdir -p ~/.config/xfce4/terminal/
-ln -s ~/dotfiles/xfce4/terminalrc ~/.config/xfce4/terminal/terminalrc
-ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
-ln -s ~/dotfiles/openscad/openscad.conf ~/.config/OpenSCAD/OpenSCAD.conf
+ln -s $HOME/dotfiles/zsh/zshrc $HOME/.zshrc
+ln -s $HOME/dotfiles/zsh/zshenv $HOME/.zshenv
+ln -s $HOME/dotfiles/vim/vimrc $HOME/.vimrc
+ln -s $HOME/dotfiles/git/gitconfig $HOME/.gitconfig
+mkdir -p $HOME/.config/xfce4/terminal/
+ln -s $HOME/dotfiles/xfce4/terminalrc $HOME/.config/xfce4/terminal/terminalrc
+ln -s $HOME/dotfiles/tmux/tmux.conf $HOME/.tmux.conf
+ln -s $HOME/dotfiles/openscad/openscad.conf $HOME/.config/OpenSCAD/OpenSCAD.conf
 
 #load vim plugins
-vim +PluginInstall +qall
+vim +PluginInstall +qall -u $HOME/dotfiles/vim/vimplugins
 
 #load zsh plugins
-git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zshplugins/zsh-syntax-highlighting
+git clone git://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.zshplugins/zsh-syntax-highlighting

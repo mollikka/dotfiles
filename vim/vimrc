@@ -1,26 +1,5 @@
-set nocompatible
-filetype off
-set rtp+=~/.vimplugins/Vundle.vim
-call vundle#begin("~/.vimplugins")
-Plugin 'gmarik/Vundle.vim'
+so $HOME/dotfiles/vim/vimplugins
 
-Plugin 'easymotion/vim-easymotion'
-Plugin 'tpope/vim-surround'
-
-Plugin 'sirtaj/vim-openscad'
-Plugin 'JuliaLang/julia-vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'elzr/vim-json'
-Plugin 'tmhedberg/SimpylFold' "python folding
-
-Plugin 'altercation/vim-colors-solarized' 
-Plugin 'kien/rainbow_parentheses.vim' 
-
-Plugin 'scrooloose/syntastic'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-
-call vundle#end()
 filetype plugin indent on
 
 "nerdtree
