@@ -1,5 +1,8 @@
 #!/bin/sh
-set -euf -o pipefail
+if [ -z "$HOME" ]; then
+    echo "Home directory not detected."
+    exit 1
+fi
 
 rm -rf $HOME/.vimplugins
 rm -rf $HOME/.zshplugins
