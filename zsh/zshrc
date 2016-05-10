@@ -90,6 +90,8 @@ findword () {
 alias tree="find . -maxdepth 2 -not -path '*/\.*' -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 
 alias ultron="chromium"
+export PATH=$HOME/dotfiles/arch:$PATH
+
 
 #syntax highlight plugin
 source ~/.zshplugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
