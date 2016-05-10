@@ -73,6 +73,9 @@ else
     echo "No ZKBD file. Keybindings might be weird. Run 'autoload zkbd; zkbd' to generate."
 fi
 
+bindkey $ beginning-of-line
+bindkey ^ end-of-line
+
 setopt CORRECT
 
 alias ls="ls -CF --color=auto"
