@@ -32,7 +32,6 @@ let g:syntastic_auto_jump = 0
 
 " wrapping
 " http://blog.ezyang.com/2010/03/vim-textwidth/
-set linebreak
 set textwidth=79
 set formatoptions=cq
 set wrapmargin=0
@@ -46,7 +45,8 @@ set clipboard=unnamedplus
 set ruler
 set undolevels=1000	
 set backspace=indent,eol,start	
-set number	
+set number
+set relativenumber
 set exrc "project specific vimrc files
 
 "tab completion 
