@@ -13,6 +13,8 @@ mv $HOME/.zshrc $HOME/old_dotfiles/
 mv $HOME/.zshenv $HOME/old_dotfiles/
 mv $HOME/.vimrc $HOME/old_dotfiles/
 mv $HOME/.gitconfig $HOME/old_dotfiles/
+mv $HOME/.xinitrc $HOME/old_dotfiles/
+mv $HOME/.config/awesome $HOME/old_dotfiles/
 mv $HOME/.config/xfce4/terminal/terminalrc $HOME/old_dotfiles/
 mv $HOME/.tmux.conf $HOME/old_dotfiles/
 mv $HOME/.config/OpenSCAD/OpenSCAD.conf $HOME/old_dotfiles/
