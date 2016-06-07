@@ -13,10 +13,13 @@ set -euf -o pipefail
 git clone https://github.com/gmarik/Vundle.vim.git $HOME/.vimplugins/Vundle.vim
 
 #link dotfiles to home directory
+mkdir -p $HOME/.config
 ln -s $HOME/dotfiles/zsh/zshrc $HOME/.zshrc
 ln -s $HOME/dotfiles/zsh/zshenv $HOME/.zshenv
 ln -s $HOME/dotfiles/vim/vimrc $HOME/.vimrc
 ln -s $HOME/dotfiles/git/gitconfig $HOME/.gitconfig
+ln -s $HOME/dotfiles/x/xinitrc $HOME/.xinitrc
+ln -s $HOME/dotfiles/awesome $HOME/.config/awesome
 mkdir -p $HOME/.config/xfce4/terminal/
 ln -s $HOME/dotfiles/xfce4/terminalrc $HOME/.config/xfce4/terminal/terminalrc
 ln -s $HOME/dotfiles/tmux/tmux.conf $HOME/.tmux.conf
