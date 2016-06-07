@@ -38,7 +38,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init("/usr/share/awesome/themes/zenburn/theme.lua")
+beautiful.init(awful.util.getdir("config") .. "/" .. "theme/theme.lua")
 
 terminal = "xfce4-terminal"
 editor = os.getenv("EDITOR") or "nano"
