@@ -11,3 +11,11 @@ Notice the original links in many of the config files.
 3. `git clone git@github.com:mollikka/dotfiles.git`
 4. `cd ~/dotfiles`
 5. `bash setup.sh`
+
+## How did I set this thing up..
+
+###Change audio volume
+
+- `amixer set Master 50%`
+- `amixer set Master mute`
+- `amixer set Master unmute`
