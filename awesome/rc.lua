@@ -45,6 +45,7 @@ editor = os.getenv("EDITOR") or "nano"
 editor_cmd = terminal .. " -e " .. editor
 web = "chromium" or "firefox"
 internet = "wicd-client"
+mail = "thunderbird"
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -93,6 +94,7 @@ end
 -- Create a laucher widget and a main menu
 
 mymainmenu = awful.menu({ items = { { "web", web },
+                                    { "mail", mail }, 
                                     { "connect", internet },
                                     { "restart", awesome.restart },
                                     { "terminal", terminal },
