@@ -76,7 +76,7 @@ local layouts =
 -- {{{ Wallpaper
 if beautiful.wallpaper then
     for s = 1, screen.count() do
-        gears.wallpaper.maximized(beautiful.wallpaper, s, true)
+        gears.wallpaper.centered(beautiful.wallpaper, s)
     end
 end
 -- }}}
@@ -113,7 +113,7 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 
 -- {{{ Wibox
 -- Create a textclock widget
-mytextclock = awful.widget.textclock()
+mytextclock = awful.widget.textclock.new("%a %Y-%m-%d %H:%M",20)
 
 -- Create a wibox for each screen and add it
 mywibox = {}

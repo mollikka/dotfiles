@@ -12,7 +12,7 @@ theme.wallpaper = "/usr/share/awesome/themes/zenburn/zenburn-background.png"
 -- }}}
 
 -- {{{ Styles
-theme.font      = "sans 8"
+theme.font      = "sans 10"
 
 -- {{{ Colors
 theme.fg_normal  = "#DCDCCC"
@@ -66,7 +66,7 @@ theme.mouse_finder_color = "#CC9393"
 -- Variables set for theming the menu:
 -- menu_[bg|fg]_[normal|focus]
 -- menu_[border_color|border_width]
-theme.menu_height = 15
+theme.menu_height = 30
 theme.menu_width  = 100
 -- }}}
 
