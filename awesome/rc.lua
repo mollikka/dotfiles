@@ -1,6 +1,6 @@
-package.path = package.path .. ';/home/lauri/.awesomeplugins/?.lua'
-package.path = package.path .. ';/home/lauri/.awesomeplugins/*/?.lua'
-package.path = package.path .. ';/home/lauri/.awesomeplugins/?/init.lua'
+package.path = package.path .. ';' .. os.getenv("HOME") .. '/.awesomeplugins/?.lua'
+package.path = package.path .. ';' .. os.getenv("HOME") .. '/.awesomeplugins/*/?.lua'
+package.path = package.path .. ';' .. os.getenv("HOME") .. '/.awesomeplugins/?/init.lua'
 
 -- Standard awesome library
 local gears = require("gears")
