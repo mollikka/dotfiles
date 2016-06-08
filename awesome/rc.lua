@@ -1,3 +1,7 @@
+package.path = package.path .. ';/home/lauri/.awesomeplugins/?.lua'
+package.path = package.path .. ';/home/lauri/.awesomeplugins/*/?.lua'
+package.path = package.path .. ';/home/lauri/.awesomeplugins/?/init.lua'
+
 -- Standard awesome library
 local gears = require("gears")
 local awful = require("awful")
@@ -10,6 +14,8 @@ local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
 local menubar = require("menubar")
+-- Addons
+local vicious = require("vicious")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to

@@ -6,6 +6,7 @@ fi
 
 rm -rf $HOME/.vimplugins
 rm -rf $HOME/.zshplugins
+rm -rf $HOME/.awesomeplugins
 
 rm -r $HOME/old_dotfiles
 mkdir $HOME/old_dotfiles
