@@ -17,9 +17,8 @@ local menubar = require("menubar")
 -- Addons
 local vicious = require("vicious")
 
+
 -- {{{ Error handling
--- Check if awesome encountered an error during startup and fell back to
--- another config (This code will only ever execute for the fallback config)
 if awesome.startup_errors then
     naughty.notify({ preset = naughty.config.presets.critical,
                      title = "Oops, there were errors during startup!",
@@ -42,11 +41,8 @@ do
 end
 -- }}}
 
--- {{{ Variable definitions
--- Themes define colours, icons, font and wallpapers.
-beautiful.init(awful.util.getdir("config") .. "/" .. "theme/theme.lua")
 
--- program shortcuts
+-- {{{ Variable definitions
 terminal = "xfce4-terminal"
 editor = os.getenv("EDITOR") or "nano"
 editor_cmd = terminal .. " -e " .. editor
@@ -55,14 +51,16 @@ internet = "wicd-client"
 mail = "thunderbird"
 files = "thunar"
 
--- Default modkey.
--- Usually, Mod4 is the key with a logo between Control and Alt.
--- If you do not like this or do not have such a key,
--- I suggest you to remap Mod4 to another key using xmodmap or other tools.
--- However, you can use another modifier like Mod1, but it may interact with others.
-modkey = "Mod4"
+modkey = "Mod4" --Mod4 is the branded logo button
+--- }}}
 
--- Table of layouts to cover with awful.layout.inc, order matters.
+
+-- {{{ Theme
+beautiful.init(awful.util.getdir("config") .. "/" .. "theme/theme.lua")
+--- }}}
+
+
+--- {{{ Active layouts
 local layouts =
 {
     --awful.layout.suit.floating,
@@ -78,7 +76,7 @@ local layouts =
     --awful.layout.suit.max.fullscreen,
     --awful.layout.suit.magnifier
 }
--- }}}
+--- }}}
 
 -- {{{ Wallpaper
 if beautiful.wallpaper then
@@ -88,8 +86,8 @@ if beautiful.wallpaper then
 end
 -- }}}
 
--- {{{ Tags
 
+-- {{{ Tags
   tags = {
     names = {"main"},
     layout = {layouts[1]}
@@ -98,28 +96,30 @@ end
     tags[s] = awful.tag(tags.names, s, tags.layout)
   end
 -- }}}
+
+
 -- {{{ Menu
--- Create a laucher widget and a main menu
+mymainmenu = awful.menu({ items = {
+    { "web", web },
+    { "mail", mail }, 
+    { "files", files },
+    { "lan", internet },
+    { "restart", awesome.restart },
+    { "terminal", terminal },
+    { "quit", awesome.quit},
+  }
+})
 
-mymainmenu = awful.menu({ items = { { "web", web },
-                                    { "mail", mail }, 
-                                    { "files", files },
-                                    { "lan", internet },
-                                    { "restart", awesome.restart },
-                                    { "terminal", terminal },
-                                    { "quit", awesome.quit},
-                                  }
-                        })
+mylauncher = awful.widget.launcher({
+  image = beautiful.awesome_icon,
+  menu = mymainmenu
+})
 
-mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
-                                     menu = mymainmenu })
-
--- Menubar configuration
-menubar.utils.terminal = terminal -- Set the terminal for applications that require it
+menubar.utils.terminal = terminal -- terminal for applications that require it
 -- }}}
 
+
 -- {{{ Wibox
--- Create a textclock widget
 datewidget = wibox.widget.textbox()
 vicious.register(datewidget, vicious.widgets.date,"  %a %Y-%m-%d %H:%M  ", 20);
 
@@ -154,6 +154,18 @@ volumewidget:buttons(awful.button({ }, 1, function() awful.util.spawn(terminal .
 wifiwidget = wibox.widget.textbox()
 vicious.register(wifiwidget, vicious.widgets.wifi, "  WLAN: ${ssid} ${linp}%  ",10 , "wlp2s0");
 
+widgets = { --info widgets from right to left in the bar
+    datewidget,
+    cpuwidget,
+    memwidget,
+    batterywidget,
+    volumewidget,
+    wifiwidget,
+}
+
+--- }}}
+
+--- BUILD IT ALL
 
 -- Create a wibox for each screen and add it
 mywibox = {}
@@ -234,12 +246,9 @@ for s = 1, screen.count() do
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
-    right_layout:add(datewidget)
-    right_layout:add(cpuwidget)
-    right_layout:add(memwidget)
-    right_layout:add(batterywidget)
-    right_layout:add(volumewidget)
-    right_layout:add(wifiwidget)
+    for w = 1, #widgets do
+      right_layout:add(widgets[w])
+    end
     right_layout:add(mylayoutbox[s])
 
     -- Now bring it all together (with the tasklist in the middle)
