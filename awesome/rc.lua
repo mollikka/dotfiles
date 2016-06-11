@@ -154,6 +154,19 @@ volumewidget:buttons(awful.button({ }, 1, function() awful.util.spawn(terminal .
 wifiwidget = wibox.widget.textbox()
 vicious.register(wifiwidget, vicious.widgets.wifi, "  WLAN: ${ssid} ${linp}%  ",10 , "wlp2s0");
 
+wifiwidget:buttons(awful.button({ }, 1, function() awful.util.spawn(terminal .. " -x wicd-curses") end))
+
+updatewidget = wibox.widget.textbox()
+vicious.register(updatewidget, vicious.widgets.pkg,
+  function(widget, args)
+    if args[1] == 0 then
+      return ""
+    else
+      return "  " .. args[1] .. " updates"
+    end
+  end
+    , 600, "Arch")
+
 widgets = { --info widgets from right to left in the bar
     datewidget,
     cpuwidget,
@@ -161,6 +174,7 @@ widgets = { --info widgets from right to left in the bar
     batterywidget,
     volumewidget,
     wifiwidget,
+    updatewidget,
 }
 
 --- }}}
