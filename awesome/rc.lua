@@ -123,6 +123,10 @@ menubar.utils.terminal = terminal -- terminal for applications that require it
 datewidget = wibox.widget.textbox()
 vicious.register(datewidget, vicious.widgets.date,"  %a %Y-%m-%d %H:%M  ", 20);
 
+fileswidget = wibox.widget.textbox()
+vicious.register(fileswidget, vicious.widgets.fs, "  FS: ${/ used_gb}GB  ", 20);
+fileswidget:buttons(awful.button({ }, 1, function() awful.util.spawn(files) end))
+
 cpuwidget = wibox.widget.textbox()
 vicious.register(cpuwidget, vicious.widgets.cpu,"  CPU: $1% ", 20);
 
@@ -153,6 +157,7 @@ vicious.register(updatewidget, vicious.widgets.pkg,
 
 widgets = { --info widgets from right to left in the bar
     datewidget,
+    fileswidget,
     cpuwidget,
     memwidget,
     batterywidget,
