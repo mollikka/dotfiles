@@ -130,30 +130,14 @@ memwidget = wibox.widget.textbox()
 vicious.register(memwidget, vicious.widgets.mem,"RAM: $1% SWP: $5%  ", 20);
 
 batterywidget = wibox.widget.textbox()
-vicious.register(batterywidget, vicious.widgets.bat, "  ⚡ $3  ",60, "BAT1")
+vicious.register(batterywidget, vicious.widgets.bat, "  BAT: $3  ",60, "BAT1")
 
 volumewidget = wibox.widget.textbox()
-vicious.register(volumewidget, vicious.widgets.volume,
-  function(widget, args)
-    if args[1] == 0 then
-      return "  ⨯  "
-    end
-    if args[1] < 34 then
-      return "  ♩  "
-    end
-    if args[1] < 67 then
-      return "  ♪  "
-    else
-      return "  ♫  "
-    end
-  end
-    , 10, "Master")
-
+vicious.register(volumewidget, vicious.widgets.volume, "  SND: $1  ", 10, "Master")
 volumewidget:buttons(awful.button({ }, 1, function() awful.util.spawn(terminal .. " -x alsamixer") end))
 
 wifiwidget = wibox.widget.textbox()
 vicious.register(wifiwidget, vicious.widgets.wifi, "  WLAN: ${ssid} ${linp}%  ",10 , "wlp2s0");
-
 wifiwidget:buttons(awful.button({ }, 1, function() awful.util.spawn(terminal .. " -x wicd-curses") end))
 
 updatewidget = wibox.widget.textbox()
