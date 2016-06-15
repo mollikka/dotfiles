@@ -124,7 +124,7 @@ datewidget = wibox.widget.textbox()
 vicious.register(datewidget, vicious.widgets.date,"  %a %Y-%m-%d %H:%M  ", 20);
 
 fileswidget = wibox.widget.textbox()
-vicious.register(fileswidget, vicious.widgets.fs, "  FS: ${/ used_gb}GB  ", 20);
+vicious.register(fileswidget, vicious.widgets.fs, "  FS: ${/ avail_gb}GB  ", 20);
 fileswidget:buttons(awful.button({ }, 1, function() awful.util.spawn(files) end))
 
 cpuwidget = wibox.widget.textbox()
