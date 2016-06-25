@@ -47,6 +47,7 @@ terminal = "xfce4-terminal"
 editor = os.getenv("EDITOR") or "nano"
 editor_cmd = terminal .. " -e " .. editor
 web = "chromium"
+webmini = "chromium --app=http://reddit.com"
 internet = "wicd-client"
 mail = "thunderbird"
 files = "thunar"
@@ -99,11 +100,25 @@ end
 
 
 -- {{{ Menu
+
+browsermenu = {
+  { "normal", web },
+  { "compact", webmini },
+  { "mail", mail },
+}
+
+myprograms = {
+  { "office", "libreoffice" },
+  { "blender", "blender" },
+  { "gimp", "gimp" },
+  { "openscad", "openscad" },
+  { "arduino", "arduino" },
+}
+
 mymainmenu = awful.menu({ items = {
-    { "web", web },
-    { "mail", mail }, 
+    { "web", browsermenu },
+    { "apps", myprograms },
     { "files", files },
-    { "lan", internet },
     { "restart", awesome.restart },
     { "terminal", terminal },
     { "quit", awesome.quit},
