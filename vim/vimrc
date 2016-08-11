@@ -142,11 +142,5 @@ function! s:NextTextObject(motion)
 endfunction
 """""
 
-"easymotion
-let g:EasyMotion_do_mapping = 0
-let g:EasyMotion_keys = 'qwertasdfxcgtvbnhypm1234567890uiojkl'
-let g:EasyMotion_re_anywhere = '\v(<.|^)'
-nmap q <plug>(easymotion-jumptoanywhere)
-
 "lock nasty crap beyond this file
 set secure
