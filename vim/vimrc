@@ -32,6 +32,7 @@ let g:syntastic_auto_jump = 0
 
 "generic
 set formatoptions-=tc
+set nowrap              " no visual text wrapping
 set colorcolumn=80
 set encoding=utf-8      " default encoding displayed.
 set fileencoding=utf-8  " default encoding written to file.
@@ -95,7 +96,7 @@ let g:solarized_termtrans = 1
 set background=dark
 colorscheme solarized
 set list
-set listchars=tab:>.,trail:.
+set listchars=tab:>.,trail:.,extends:>,precedes:<
 
 "parentheses coloring
 
