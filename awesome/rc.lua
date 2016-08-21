@@ -53,6 +53,7 @@ webmini = "chromium --app=http://reddit.com"
 internet = "wicd-client"
 mail = "thunderbird"
 files = "thunar"
+shutdown = "shutdown now"
 
 modkey = "Mod4" --Mod4 is the branded logo button
 --- }}}
@@ -118,6 +119,7 @@ mymainmenu = awful.menu({ items = {
     { "restart", awesome.restart },
     { "terminal", terminal },
     { "quit", awesome.quit},
+    { "shutdown", shutdown},
   }
 })
 

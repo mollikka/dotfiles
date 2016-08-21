@@ -8,7 +8,7 @@
 
 -- {{{ Main
 theme = {}
-theme.wallpaper = "/usr/share/awesome/themes/zenburn/zenburn-background.png"
+theme.wallpaper = "/home/lauri/dotfiles/awesome/theme/wallpaper.jpg"
 -- }}}
 
 -- {{{ Styles
