@@ -2,6 +2,8 @@ package.path = package.path .. ';' .. os.getenv("HOME") .. '/.awesomeplugins/?.l
 package.path = package.path .. ';' .. os.getenv("HOME") .. '/.awesomeplugins/*/?.lua'
 package.path = package.path .. ';' .. os.getenv("HOME") .. '/.awesomeplugins/?/init.lua'
 
+programlist = os.getenv("HOME") .. '/dotfiles/awesome/programmenu.lua'
+
 -- Standard awesome library
 local gears = require("gears")
 local awful = require("awful")
@@ -107,13 +109,7 @@ browsermenu = {
   { "mail", mail },
 }
 
-myprograms = {
-  { "office", "libreoffice" },
-  { "blender", "blender" },
-  { "gimp", "gimp" },
-  { "openscad", "openscad" },
-  { "arduino", "arduino" },
-}
+dofile(programlist)
 
 mymainmenu = awful.menu({ items = {
     { "web", browsermenu },
