@@ -8,7 +8,7 @@
 
 -- {{{ Main
 theme = {}
-theme.wallpaper = "/home/lauri/dotfiles/awesome/theme/wallpaper.jpg"
+theme.wallpaper = "/home/lauri/dotfiles/awesome/theme/wp.svg"
 -- }}}
 
 -- {{{ Styles
