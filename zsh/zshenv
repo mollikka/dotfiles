@@ -1,4 +1,12 @@
+## DISABLES GLOBAL SETTINGS
+# /etc/zprofile, /etc/zshrc, /etc/zlogin, /etc/zlogout
 setopt NO_GLOBAL_RCS
 
+# DEFAULT PATH
+PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/bin"
+export PATH=$HOME/dotfiles/arch:$PATH
+
+# PREFERENCES
 export EDITOR=nano
 export LANG=en_US.UTF-8
+

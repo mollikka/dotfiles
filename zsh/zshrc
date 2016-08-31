@@ -31,6 +31,13 @@ set_prompt
 TRAPWINCH ()
 { set_prompt }
 
+#TERMINAL EMULATOR TITLE TO WORKING DIRECTORY
+case $TERM in
+  xterm*)
+    precmd () {print -Pn "\e]0;%~\a"}
+    ;;
+esac
+
 # TTY colors
 # http://github.com/joepvd/tty-solarized
 if [ "$TERM" = "linux" ]; then
@@ -53,10 +60,9 @@ if [ "$TERM" = "linux" ]; then
     clear # against bg artifacts
 fi
 
-#if ZKBD file exists, fix key bindings
+#AUTOMATIC KEYBINDS
 #to generate: "autoload zkbd; zkbd
 #http://stackoverflow.com/questions/8638012/fix-key-settings-home-end-insert-delete-in-zshrc-when-running-zsh-in-terminat
-
 ZKBD=~/.zkbd/$TERM-${${DISPLAY:t}:-$VENDOR-$OSTYPE}
 if [ -f $ZKBD ]; then
     source $ZKBD
@@ -80,39 +86,34 @@ setopt CORRECT
 
 alias su="su -p"
 
+## CUSTOM FUNCTIONS
+
+# find a word in directory files
 # http://stackoverflow.com/questions/16956810/finding-all-files-containing-a-text-string-on-linux
 findword () {
   grep -rnw "$1" -e "$2"
 }
 
+# execute python
 function p() {
   python -c "print($1)"
 }
 
+# display files in a tree view
 # http://www.unix.com/solaris/54552-what-command-can-display-files-tree.html
 alias tree="find . -maxdepth 2 -not -path '*/\.*' -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 
 alias ultron="chromium"
-export PATH=$HOME/dotfiles/arch:$PATH
 
+## PLUGINS
 
 #syntax highlight plugin
 source ~/.zshplugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main)
 
-search() {
-    grep -nr $1 $2
-}
-
-#xfce terminal title to working directory
-case $TERM in
-  xterm*)
-    precmd () {print -Pn "\e]0;%~\a"}
-    ;;
-esac
 
 
-#hopefully there aren't any major local edits, but if there are...
+#LOCAL ZSH SETTINGS
 LOCALS=~/dotfiles/zsh/localrc
 if [ -f $LOCALS ]; then
     source $LOCALS
