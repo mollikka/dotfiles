@@ -116,8 +116,8 @@ mymainmenu = awful.menu({ items = {
     { "web", browsermenu },
     { "apps", myprograms },
     { "files", files },
-    { "restart", awesome.restart },
     { "terminal", terminal },
+    { "restart", awesome.restart },
     { "quit", awesome.quit},
     { "shutdown", shutdown},
   }
