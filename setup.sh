@@ -22,7 +22,6 @@ ln -s $HOME/dotfiles/x/xinitrc $HOME/.xinitrc
 ln -s $HOME/dotfiles/awesome $HOME/.config/awesome
 mkdir -p $HOME/.config/xfce4/terminal/
 ln -s $HOME/dotfiles/xfce4/terminalrc $HOME/.config/xfce4/terminal/terminalrc
-ln -s $HOME/dotfiles/tmux/tmux.conf $HOME/.tmux.conf
 mkdir -p $HOME/.config/OpenSCAD/
 ln -s $HOME/dotfiles/openscad/openscad.conf $HOME/.config/OpenSCAD/OpenSCAD.conf
 
