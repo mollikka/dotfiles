@@ -10,7 +10,10 @@ compinit
 # End of lines added by compinstall
 
 ## AUTOCOMPLETE/LS STYLING
-zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)(?)*==34=00}:${(s.:.)LS_COLORS}")';
+# http://superuser.com/questions/700406/zsh-not-recognizing-ls-colors
+LS_COLORS='no=00;37:fi=00:di=00;33:ln=04;36:pi=40;33:so=01;35:bd=40;33;01:'
+export LS_COLORS
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 alias ls="ls -CF --color=auto"
 
 ## COMMAND PROMPT STYLING
