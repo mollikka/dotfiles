@@ -3,6 +3,7 @@ package.path = package.path .. ';' .. os.getenv("HOME") .. '/.awesomeplugins/*/?
 package.path = package.path .. ';' .. os.getenv("HOME") .. '/.awesomeplugins/?/init.lua'
 
 programlist = os.getenv("HOME") .. '/dotfiles/awesome/programmenu.lua'
+layoutfile = os.getenv("HOME") .. '/dotfiles/awesome/layouts.lua'
 
 -- Standard awesome library
 local gears = require("gears")
@@ -65,21 +66,7 @@ beautiful.init(awful.util.getdir("config") .. "/" .. "theme/theme.lua")
 
 
 --- {{{ Active layouts
-local layouts =
-{
-    --awful.layout.suit.floating,
-    awful.layout.suit.tile,
-    --awful.layout.suit.tile.left,
-    --awful.layout.suit.tile.bottom,
-    --awful.layout.suit.tile.top,
-    awful.layout.suit.fair,
-    --awful.layout.suit.fair.horizontal,
-    --awful.layout.suit.spiral,
-    --awful.layout.suit.spiral.dwindle,
-    --awful.layout.suit.max,
-    --awful.layout.suit.max.fullscreen,
-    --awful.layout.suit.magnifier
-}
+dofile(layoutfile)
 --- }}}
 
 -- {{{ Wallpaper
