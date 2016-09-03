@@ -295,7 +295,10 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "t", function () awful.util.spawn(terminal) end),
 
     -- Prompt
-    awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end)
+    awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
+
+    -- Mouse out of the way
+    awful.key({ modkey            }, "F7", function () mouse.coords({ x=0, y=0 }) end)
 )
 
 clientkeys = awful.util.table.join(
