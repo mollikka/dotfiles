@@ -16,7 +16,8 @@ Notice the original links in many of the config files.
 
 ### Awesome
 
-- `Meta-M` Menu
+- `Meta-M` Open menu
+- `Meta-T` Open terminal
 - `Meta-Tab` Rotate window focus
 - `Meta-Shift-Tab` Rotate window position
 - `Meta-F4` Close window
