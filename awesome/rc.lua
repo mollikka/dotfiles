@@ -54,7 +54,7 @@ internet = "wicd-client"
 mail = "thunderbird"
 files = "thunar"
 shutdown = "shutdown now"
-soundsettings = 'terminal .. " -x alsamixer"'
+soundsettings = terminal .. " -x alsamixer"
 
 modkey = "Mod4" --Mod4 is the branded logo button
 --- }}}
