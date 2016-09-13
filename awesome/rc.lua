@@ -55,6 +55,7 @@ mail = "thunderbird"
 files = "thunar"
 shutdown = "shutdown now"
 soundsettings = terminal .. " -x alsamixer"
+lockscreen = "xscreensaver-command -lock"
 
 modkey = "Mod4" --Mod4 is the branded logo button
 --- }}}
@@ -257,7 +258,10 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
 
     -- Mouse out of the way
-    awful.key({ modkey            }, "F7", function () mouse.coords({ x=0, y=0 }) end)
+    awful.key({ modkey            }, "F7", function () mouse.coords({ x=0, y=0 }) end),
+
+    -- Lock screen
+    awful.key({ modkey,           }, "F12", function () awful.util.spawn(lockscreen) end)
 )
 
 clientkeys = awful.util.table.join(

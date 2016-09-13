@@ -26,3 +26,4 @@ Notice the original links in many of the config files.
 - `Meta-F4` Close window
 - `Meta-F7` Hide mouse
 - `Meta-F11` Full screen
+- `Meta-F12` Lock screen
