@@ -257,6 +257,9 @@ globalkeys = awful.util.table.join(
     -- Prompt
     awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
 
+    -- Restart Awesome
+    awful.key({ modkey            }, "F5", function () awesome.restart() end),
+
     -- Mouse out of the way
     awful.key({ modkey            }, "F7", function () mouse.coords({ x=0, y=0 }) end),
 

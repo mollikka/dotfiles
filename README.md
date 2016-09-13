@@ -24,6 +24,7 @@ Notice the original links in many of the config files.
 - `Meta-Shift-Tab` Rotate window position
 - `Meta-F3` Minimize window
 - `Meta-F4` Close window
+- `Meta-F5` Restart Awesome
 - `Meta-F7` Hide mouse
 - `Meta-F11` Full screen
 - `Meta-F12` Lock screen
