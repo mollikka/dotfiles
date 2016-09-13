@@ -12,10 +12,13 @@ Notice the original links in many of the config files.
 4. `cd ~/dotfiles`
 5. `bash setup.sh`
 
-## How did I set this thing up..
+## Shortcuts
 
-###Change audio volume
+### Awesome
 
-- `amixer set Master 50%`
-- `amixer set Master mute`
-- `amixer set Master unmute`
+- `Meta-M` Menu
+- `Meta-Tab` Rotate window focus
+- `Meta-Shift-Tab` Rotate window position
+- `Meta-F4` Close window
+- `Meta-F7` Hide mouse
+- `Meta-F11` Full screen
