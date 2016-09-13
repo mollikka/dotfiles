@@ -47,8 +47,6 @@ end
 
 -- {{{ Variable definitions
 terminal = "xfce4-terminal"
-editor = os.getenv("EDITOR") or "nano"
-editor_cmd = terminal .. " -e " .. editor
 web = "chromium"
 webmini = "chromium --app=http://reddit.com"
 internet = "wicd-client"
