@@ -17,6 +17,7 @@ Notice the original links in many of the config files.
 ### Awesome
 
 - `Meta-M` Open menu
+- `Meta-S` Open audio mixer
 - `Meta-T` Open terminal
 - `Meta-Tab` Rotate window focus
 - `Meta-Shift-Tab` Rotate window position

@@ -247,6 +247,9 @@ globalkeys = awful.util.table.join(
     -- Standard program
     awful.key({ modkey,           }, "t", function () awful.util.spawn(terminal) end),
 
+    -- Sound mixer
+    awful.key({ modkey,           }, "s", function () awful.util.spawn(soundsettings) end),
+
     -- Prompt
     awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
 
