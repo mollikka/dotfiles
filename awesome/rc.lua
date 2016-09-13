@@ -53,6 +53,7 @@ internet = "wicd-client"
 mail = "thunderbird"
 files = "thunar"
 shutdown = "shutdown now"
+soundsettings = 'terminal .. " -x alsamixer"'
 
 modkey = "Mod4" --Mod4 is the branded logo button
 --- }}}
@@ -95,15 +96,24 @@ browsermenu = {
   { "mail", mail },
 }
 
+settingsmenu = {
+  { "sound", soundsettings },
+  { "wlan", internet },
+}
+
+awesomemenu = {
+  { "restart", awesome.restart },
+  { "quit", awesome.quit},
+}
+
 dofile(programlist)
 
 mymainmenu = awful.menu({ items = {
     { "web", browsermenu },
     { "apps", myprograms },
     { "files", files },
-    { "terminal", terminal },
-    { "restart", awesome.restart },
-    { "quit", awesome.quit},
+    { "settings", settingsmenu },
+    { "awesome", awesomemenu },
     { "shutdown", shutdown},
   }
 })
@@ -136,7 +146,7 @@ vicious.register(batterywidget, vicious.widgets.bat, "  BAT: $3  ",60, "BAT1")
 
 volumewidget = wibox.widget.textbox()
 vicious.register(volumewidget, vicious.widgets.volume, "  SND: $1  ", 10, "Master")
-volumewidget:buttons(awful.button({ }, 1, function() awful.util.spawn(terminal .. " -x alsamixer") end))
+volumewidget:buttons(awful.button({ }, 1, function() awful.util.spawn(soundsettings) end))
 
 wifiwidget = wibox.widget.textbox()
 vicious.register(wifiwidget, vicious.widgets.wifi, "  WLAN: ${ssid} ${linp}%  ",10 , "wlp2s0");
