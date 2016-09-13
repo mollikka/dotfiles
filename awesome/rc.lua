@@ -250,6 +250,9 @@ globalkeys = awful.util.table.join(
     -- Sound mixer
     awful.key({ modkey,           }, "s", function () awful.util.spawn(soundsettings) end),
 
+    -- WLAN settings
+    awful.key({ modkey,           }, "w", function () awful.util.spawn(internet) end),
+
     -- Prompt
     awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
 
