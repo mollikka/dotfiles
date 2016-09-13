@@ -22,6 +22,7 @@ Notice the original links in many of the config files.
 - `Meta-W` Open WLAN dialog
 - `Meta-Tab` Rotate window focus
 - `Meta-Shift-Tab` Rotate window position
+- `Meta-F3` Minimize window
 - `Meta-F4` Close window
 - `Meta-F7` Hide mouse
 - `Meta-F11` Full screen
