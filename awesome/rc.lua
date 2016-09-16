@@ -54,6 +54,7 @@ internet = "wicd-client"
 mail = "thunderbird"
 files = "thunar"
 shutdown = "shutdown now"
+restart = "shutdown now -r"
 soundsettings = terminal .. " -x alsamixer"
 lockscreen = "xscreensaver-command -lock"
 
@@ -116,6 +117,7 @@ mymainmenu = awful.menu({ items = {
     { "files", files },
     { "settings", settingsmenu },
     { "awesome", awesomemenu },
+    { "restart", restart},
     { "shutdown", shutdown},
   }
 })
