@@ -1,6 +1,7 @@
 -------------------------------
 --  "Zenburn" awesome theme  --
 --    By Adrian C. (anrxc)   --
+-- Edited by L.T.            --
 -------------------------------
 
 -- Alternative icon sets and widget icons:
@@ -15,19 +16,19 @@ theme.wallpaper = "/home/lauri/dotfiles/awesome/theme/wp.svg"
 theme.font      = "sans 10"
 
 -- {{{ Colors
-theme.fg_normal  = "#DCDCCC"
-theme.fg_focus   = "#F0DFAF"
+theme.fg_normal  = "#D0D0D0"
+theme.fg_focus   = "#000000"
 theme.fg_urgent  = "#CC9393"
-theme.bg_normal  = "#3F3F3F"
-theme.bg_focus   = "#1E2320"
+theme.bg_normal  = "#202020"
+theme.bg_focus   = "#44AA08" --"#1E2320"
 theme.bg_urgent  = "#3F3F3F"
 theme.bg_systray = theme.bg_normal
 -- }}}
 
 -- {{{ Borders
 theme.border_width  = 2
-theme.border_normal = "#3F3F3F"
-theme.border_focus  = "#6F6F6F"
+theme.border_normal = theme.bg_normal
+theme.border_focus  = theme.bg_focus --"#6F6F6F"
 theme.border_marked = "#CC9393"
 -- }}}
 
