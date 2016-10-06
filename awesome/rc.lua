@@ -57,6 +57,8 @@ shutdown = "shutdown now"
 restart = "shutdown now -r"
 soundsettings = terminal .. " -x alsamixer"
 lockscreen = "xscreensaver-command -lock"
+volume_up = "amixer set Master 5%+"
+volume_down = "amixer set Master 5%-"
 
 modkey = "Mod4" --Mod4 is the branded logo button
 --- }}}
@@ -236,6 +238,8 @@ root.buttons(awful.util.table.join(
 globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
     awful.key({ modkey,           }, "Right",  awful.tag.viewnext       ),
+    awful.key({ modkey,           }, "Up",     function() awful.util.spawn(volume_up) end),
+    awful.key({ modkey,           }, "Down",   function() awful.util.spawn(volume_down) end),
 
     awful.key({ modkey,           }, "Tab",
         function ()
