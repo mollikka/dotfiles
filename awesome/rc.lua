@@ -194,20 +194,26 @@ root.buttons(awful.util.table.join(
 
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
-    awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
-    awful.key({ modkey,           }, "Right",  awful.tag.viewnext       ),
-    awful.key({ modkey,           }, "Up",     function() awful.util.spawn(volume_up) end),
-    awful.key({ modkey,           }, "Down",   function() awful.util.spawn(volume_down) end),
+    awful.key({ modkey,           }, "Left",   function()
+                                                      awful.client.focus.byidx(-1) 
+                                                      if client.focus then client.focus:raise() end
+                                               end     ),
+    awful.key({ modkey,           }, "Right",   function()
+                                                      awful.client.focus.byidx(1) 
+                                                      if client.focus then client.focus:raise() end
+                                               end     ),
+    awful.key({ modkey,  "Shift"  }, "Left",   function()
+                                                      awful.client.swap.byidx(-1) 
+                                                      if client.focus then client.focus:raise() end
+                                               end     ),
+    awful.key({ modkey,  "Shift"  }, "Right",   function()
+                                                      awful.client.swap.byidx(1) 
+                                                      if client.focus then client.focus:raise() end
+                                               end     ),
+    awful.key({ modkey,           }, "Up",     awful.tag.viewprev),
+    awful.key({ modkey,           }, "Down",   awful.tag.viewnext),
 
-    awful.key({ modkey,           }, "Tab",
-        function ()
-            awful.client.focus.byidx( 1)
-            if client.focus then client.focus:raise() end
-        end),
     awful.key({ modkey,           }, "m", function () mymainmenu:show() end),
-
-    -- Layout manipulation
-    awful.key({ modkey, "Shift"   }, "Tab", function () awful.client.swap.byidx(  1)    end),
 
     -- Standard program
     awful.key({ modkey,           }, "t", function () awful.util.spawn(terminal) end),
