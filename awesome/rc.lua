@@ -3,7 +3,6 @@ package.path = package.path .. ';' .. os.getenv("HOME") .. '/.awesomeplugins/*/?
 package.path = package.path .. ';' .. os.getenv("HOME") .. '/.awesomeplugins/?/init.lua'
 
 programlist = os.getenv("HOME") .. '/dotfiles/awesome/programmenu.lua'
-layoutfile = os.getenv("HOME") .. '/dotfiles/awesome/layouts.lua'
 widgetsfile = os.getenv("HOME") .. '/dotfiles/awesome/widgets.lua'
 
 -- Standard awesome library
@@ -68,11 +67,6 @@ modkey = "Mod4" --Mod4 is the branded logo button
 beautiful.init(awful.util.getdir("config") .. "/" .. "theme/theme.lua")
 --- }}}
 
-
---- {{{ Active layouts
-dofile(layoutfile)
---- }}}
-
 -- {{{ Wallpaper
 if beautiful.wallpaper then
     for s = 1, screen.count() do
@@ -85,7 +79,7 @@ end
 -- {{{ Tags
   tags = {
     names = {"main","side"},
-    layout = {layouts[1],layouts[2]}
+    layout = {awful.layout.suit.max,awful.layout.suit.tile,}
   }
   for s = 1, screen.count() do
     tags[s] = awful.tag(tags.names, s, tags.layout)
