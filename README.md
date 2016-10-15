@@ -20,7 +20,7 @@ Notice the original links in many of the config files.
 - `Meta-S` Open audio mixer
 - `Meta-T` Open terminal
 - `Meta-W` Open WLAN dialog
-- `Meta-Left` `Meta-Right` Rotate window focus
+- `Meta-Tab` `Meta-Left` `Meta-Right` Rotate window focus
 - `Meta-Shift-Left` `Meta-Shift-Right` Rotate window position
 - `Meta-Up` `Meta-Down` Rotate tag focus
 - `Meta-F4` Close window

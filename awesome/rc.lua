@@ -194,6 +194,10 @@ root.buttons(awful.util.table.join(
 
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
+    awful.key({ modkey,           }, "Tab",   function()
+                                                      awful.client.focus.byidx(1) 
+                                                      if client.focus then client.focus:raise() end
+                                               end     ),
     awful.key({ modkey,           }, "Left",   function()
                                                       awful.client.focus.byidx(-1) 
                                                       if client.focus then client.focus:raise() end
