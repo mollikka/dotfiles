@@ -24,6 +24,7 @@ mkdir -p $HOME/.config/xfce4/terminal/
 ln -s $HOME/dotfiles/xfce4/terminalrc $HOME/.config/xfce4/terminal/terminalrc
 mkdir -p $HOME/.config/OpenSCAD/
 ln -s $HOME/dotfiles/openscad/openscad.conf $HOME/.config/OpenSCAD/OpenSCAD.conf
+ln -s $HOME/dotfiles/x/xscreensaver $HOME/.xscreensaver
 
 #load vim plugins
 vim +PluginInstall +qall -u $HOME/dotfiles/vim/vimplugins
