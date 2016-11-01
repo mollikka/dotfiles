@@ -78,8 +78,8 @@ end
 
 -- {{{ Tags
   tags = {
-    names = {"main","side"},
-    layout = {awful.layout.suit.max,awful.layout.suit.tile,}
+    names = {"A","B","C"},
+    layout = {awful.layout.suit.max,awful.layout.suit.tile,awful.layout.suit.tile}
   }
   for s = 1, screen.count() do
     tags[s] = awful.tag(tags.names, s, tags.layout)
@@ -139,24 +139,16 @@ dofile(widgetsfile)
 mywibox = {}
 mypromptbox = {}
 mytasklist = {}
-mytasklist.buttons = awful.util.table.join(
-                     awful.button({ }, 1, function (c)
-                                          end),
-                     awful.button({ }, 3, function ()
-                                          end),
-                     awful.button({ }, 4, function ()
-                                          end),
-                     awful.button({ }, 5, function ()
-                                          end))
+mytaglist = {}
 
 for s = 1, screen.count() do
     -- Create a promptbox for each screen
     mypromptbox[s] = awful.widget.prompt()
     -- Create a taglist widget
-    --mytaglist[s] = awful.widget.taglist(s, awful.widget.taglist.filter.all, mytaglist.buttons)
+    mytaglist[s] = awful.widget.taglist(s, awful.widget.taglist.filter.all)
 
     -- Create a tasklist widget
-    mytasklist[s] = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, mytasklist.buttons)
+    mytasklist[s] = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags)
 
     -- Create the wibox
     mywibox[s] = awful.wibox({ position = "top", screen = s })
@@ -164,7 +156,7 @@ for s = 1, screen.count() do
     -- Widgets that are aligned to the left
     local left_layout = wibox.layout.fixed.horizontal()
     left_layout:add(mylauncher)
-    --left_layout:add(mytaglist[s])
+    left_layout:add(mytaglist[s])
     left_layout:add(mypromptbox[s])
 
     -- Widgets that are aligned to the right
