@@ -211,12 +211,14 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "Up",
         function (c)
           local curidx = awful.tag.getidx()
+          local c = client.focus
           if curidx == 1 then
-            awful.client.movetotag(tags[client.focus.screen][2])
+            awful.client.movetotag(tags[client.focus.screen][#tags[client.focus.screen]])
           else
             awful.client.movetotag(tags[client.focus.screen][curidx - 1])
           end
           awful.tag.viewprev()
+          client.focus = c
         end),
 
     awful.key({ modkey,           }, "Down",   awful.tag.viewnext),
@@ -224,12 +226,14 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "Down",
         function (c)
           local curidx = awful.tag.getidx()
-          if curidx == 2 then
+          local c = client.focus
+          if curidx == #tags[client.focus.screen] then
             awful.client.movetotag(tags[client.focus.screen][1])
           else
             awful.client.movetotag(tags[client.focus.screen][curidx + 1])
           end
           awful.tag.viewnext()
+          client.focus = c
         end),
 
     awful.key({ modkey,           }, "m", function () mymainmenu:show() end),
