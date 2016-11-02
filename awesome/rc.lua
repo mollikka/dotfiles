@@ -76,10 +76,15 @@ end
 -- }}}
 
 
+-- {{{ Layouts
+  layouts = {awful.layout.suit.tile,
+             awful.layout.suit.max}
+-- }}}
+
 -- {{{ Tags
   tags = {
     names = {"A","B","C"},
-    layout = {awful.layout.suit.max,awful.layout.suit.tile,awful.layout.suit.tile}
+    layout = {layouts[1],layouts[1],layouts[1]}
   }
   for s = 1, screen.count() do
     tags[s] = awful.tag(tags.names, s, tags.layout)
@@ -264,7 +269,7 @@ globalkeys = awful.util.table.join(
 )
 
 clientkeys = awful.util.table.join(
-    awful.key({ modkey,           }, "F11",    function (c) c.fullscreen = not c.fullscreen  end),
+    awful.key({ modkey,           }, "F11",    function (c) awful.layout.inc(layouts,  1) end),
     awful.key({ modkey,           }, "F4",     function (c) c:kill()                         end)
 )
 
