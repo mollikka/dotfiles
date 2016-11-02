@@ -243,6 +243,9 @@ globalkeys = awful.util.table.join(
     -- WLAN settings
     awful.key({ modkey,           }, "w", function () awful.util.spawn(internet) end),
 
+    -- Browser
+    awful.key({ modkey,           }, "b", function () awful.util.spawn(web) end),
+
     -- Prompt
     awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
 

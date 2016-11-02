@@ -16,6 +16,7 @@ Notice the original links in many of the config files.
 
 ### Awesome
 
+- `Meta-B` Open browser
 - `Meta-M` Open menu
 - `Meta-S` Open audio mixer
 - `Meta-T` Open terminal
