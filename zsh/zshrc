@@ -1,8 +1,9 @@
 ## HISTORY
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-setopt appendhistory beep notify
+HISTSIZE=10000
+SAVEHIST=10000
+setopt share_history
+setopt beep notify
 
 ## Something automatically added by compinstall
 autoload -Uz compinit
