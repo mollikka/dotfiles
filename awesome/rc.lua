@@ -58,6 +58,7 @@ soundsettings = terminal .. " -x alsamixer"
 lockscreen = "xscreensaver-command -lock"
 volume_up = "amixer set Master 5%+"
 volume_down = "amixer set Master 5%-"
+screenshot = "screenshot.sh"
 
 modkey = "Mod4" --Mod4 is the branded logo button
 --- }}}
@@ -265,7 +266,10 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey            }, "F7", function () mouse.coords({ x=0, y=0 }) end),
 
     -- Lock screen
-    awful.key({ modkey,           }, "F12", function () awful.util.spawn(lockscreen) end)
+    awful.key({ modkey,           }, "F12", function () awful.util.spawn(lockscreen) end),
+
+    -- Screenshot
+    awful.key({                   }, "Print", function () awful.util.spawn(screenshot) end)
 )
 
 clientkeys = awful.util.table.join(
