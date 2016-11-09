@@ -8,34 +8,36 @@
 -- Alternative icon sets and widget icons:
 --  * http://awesome.naquadah.org/wiki/Nice_Icons
 
+barheight = 20
+
+normal_front = "#FEEACB"
+normal_back  = "#000000"--"#181B28"
+highlight_front = "#000000"
+highlight_back = "#FEEACB"--"#CC9393"
+
 -- {{{ Main
 theme = {}
 theme.wallpaper = "~/dotfiles/awesome/theme/wp.svg"
 -- }}}
 
 -- {{{ Styles
-theme.font      = "sans 10"
+theme.font      = "sans 9"
 
 -- {{{ Colors
-theme.fg_normal  = "#D0D0D0"
-theme.fg_focus   = "#000000"
-theme.fg_urgent  = "#CC9393"
-theme.bg_normal  = "#202020"
-theme.bg_focus   = "#44AA08" --"#1E2320"
-theme.bg_urgent  = "#3F3F3F"
-theme.bg_systray = theme.bg_normal
+theme.fg_normal  = normal_front
+theme.fg_focus   = highlight_front
+theme.fg_urgent  = "#000000"
+theme.bg_normal  = normal_back
+theme.bg_focus   = highlight_back --"#1E2320"
+theme.bg_urgent  = "#FF0000"
+theme.bg_systray = normal_back
 -- }}}
 
 -- {{{ Borders
 theme.border_width  = 2
-theme.border_normal = theme.bg_normal
-theme.border_focus  = theme.bg_focus --"#6F6F6F"
-theme.border_marked = "#CC9393"
--- }}}
-
--- {{{ Titlebars
-theme.titlebar_bg_focus  = "#3F3F3F"
-theme.titlebar_bg_normal = "#3F3F3F"
+theme.border_normal = normal_back
+theme.border_focus  = highlight_back --"#6F6F6F"
+theme.border_marked = "FF0000"
 -- }}}
 
 -- {{{ Mouse finder
@@ -47,9 +49,13 @@ theme.mouse_finder_color = "#CC9393"
 -- Variables set for theming the menu:
 -- menu_[bg|fg]_[normal|focus]
 -- menu_[border_color|border_width]
-theme.menu_height = 30
+theme.menu_height = barheight
 theme.menu_width  = 140
-theme.menu_border_color = theme.border_marked
+theme.menu_bg_normal = normal_back
+theme.menu_fg_normal = normal_front
+theme.menu_bg_focus = highlight_back
+theme.menu_fg_focus = highlight_front
+theme.menu_border_width = 0
 -- }}}
 
 -- {{{ Icons
@@ -62,6 +68,7 @@ theme.taglist_squares_unsel = "~/dotfiles/awesome/theme/taglist/squarez.png"
 -- {{{ Misc
 theme.awesome_icon           = "~/dotfiles/awesome/theme/awesome-icon.png"
 theme.menu_submenu_icon      = "~/dotfiles/awesome/theme/submenu.png"
+theme.statbar_height = barheight
 -- }}}
 
 -- }}}
