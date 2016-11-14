@@ -196,25 +196,29 @@ globalkeys = awful.util.table.join(
                                                       awful.client.focus.byidx(1) 
                                                       if client.focus then client.focus:raise() end
                                                end     ),
-    awful.key({ modkey,           }, "Left",   function()
-                                                      awful.client.focus.byidx(-1) 
-                                                      if client.focus then client.focus:raise() end
-                                               end     ),
-    awful.key({ modkey,           }, "Right",   function()
-                                                      awful.client.focus.byidx(1) 
-                                                      if client.focus then client.focus:raise() end
-                                               end     ),
-    awful.key({ modkey,  "Shift"  }, "Left",   function()
-                                                      awful.client.swap.byidx(-1) 
-                                                      if client.focus then client.focus:raise() end
-                                               end     ),
-    awful.key({ modkey,  "Shift"  }, "Right",   function()
-                                                      awful.client.swap.byidx(1) 
-                                                      if client.focus then client.focus:raise() end
-                                               end     ),
+    awful.key({ modkey,           }, "Left",   function() awful.cliVent.focus.byidx(-1) if client.focus then client.focus:raise() end end     ),
+    awful.key({ modkey,           }, "h",      function() awful.cliVent.focus.byidx(-1) if client.focus then client.focus:raise() end end     ),
+    awful.key({ modkey,           }, "Right",  function()awful.client.focus.byidx(1)  if client.focus then client.focus:raise() end end     ),
+    awful.key({ modkey,           }, "l",      function()awful.client.focus.byidx(1)  if client.focus then client.focus:raise() end end     ),
+    awful.key({ modkey,  "Shift"  }, "Left",   function() awful.client.swap.byidx(-1)  if client.focus then client.focus:raise() end end     ),
+    awful.key({ modkey,  "Shift"  }, "h",      function() awful.client.swap.byidx(-1)  if client.focus then client.focus:raise() end end     ),
+    awful.key({ modkey,  "Shift"  }, "Right",  function()awful.client.swap.byidx(1)   if client.focus then client.focus:raise() end end     ),
+    awful.key({ modkey,  "Shift"  }, "l",      function()awful.client.swap.byidx(1)   if client.focus then client.focus:raise() end end     ),
     awful.key({ modkey,           }, "Up",     awful.tag.viewprev),
-
+    awful.key({ modkey,           }, "k",      awful.tag.viewprev),
     awful.key({ modkey, "Shift"   }, "Up",
+        function (c)
+          local curidx = awful.tag.getidx()
+          local c = client.focus
+          if curidx == 1 then
+            awful.client.movetotag(tags[client.focus.screen][#tags[client.focus.screen]])
+          else
+            awful.client.movetotag(tags[client.focus.screen][curidx - 1])
+          end
+          awful.tag.viewprev()
+          client.focus = c
+        end),
+    awful.key({ modkey, "Shift"   }, "k",
         function (c)
           local curidx = awful.tag.getidx()
           local c = client.focus
@@ -228,8 +232,21 @@ globalkeys = awful.util.table.join(
         end),
 
     awful.key({ modkey,           }, "Down",   awful.tag.viewnext),
+    awful.key({ modkey,           }, "j",      awful.tag.viewnext),
 
     awful.key({ modkey, "Shift"   }, "Down",
+        function (c)
+          local curidx = awful.tag.getidx()
+          local c = client.focus
+          if curidx == #tags[client.focus.screen] then
+            awful.client.movetotag(tags[client.focus.screen][1])
+          else
+            awful.client.movetotag(tags[client.focus.screen][curidx + 1])
+          end
+          awful.tag.viewnext()
+          client.focus = c
+        end),
+    awful.key({ modkey, "Shift"   }, "j",
         function (c)
           local curidx = awful.tag.getidx()
           local c = client.focus
