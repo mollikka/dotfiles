@@ -196,8 +196,8 @@ globalkeys = awful.util.table.join(
                                                       awful.client.focus.byidx(1) 
                                                       if client.focus then client.focus:raise() end
                                                end     ),
-    awful.key({ modkey,           }, "Left",   function() awful.cliVent.focus.byidx(-1) if client.focus then client.focus:raise() end end     ),
-    awful.key({ modkey,           }, "h",      function() awful.cliVent.focus.byidx(-1) if client.focus then client.focus:raise() end end     ),
+    awful.key({ modkey,           }, "Left",   function() awful.client.focus.byidx(-1) if client.focus then client.focus:raise() end end     ),
+    awful.key({ modkey,           }, "h",      function() awful.client.focus.byidx(-1) if client.focus then client.focus:raise() end end     ),
     awful.key({ modkey,           }, "Right",  function()awful.client.focus.byidx(1)  if client.focus then client.focus:raise() end end     ),
     awful.key({ modkey,           }, "l",      function()awful.client.focus.byidx(1)  if client.focus then client.focus:raise() end end     ),
     awful.key({ modkey,  "Shift"  }, "Left",   function() awful.client.swap.byidx(-1)  if client.focus then client.focus:raise() end end     ),
