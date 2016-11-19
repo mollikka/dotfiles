@@ -42,6 +42,8 @@ xscreensaver -nosplash &
 
 unclutter &
 
+conky &
+
 #finnish keyboard
 setxkbmap fi
 #disable caps lock (to reset: setxkbmap -option)
