@@ -1,3 +1,4 @@
 # Window manager
 
-- Try out i3. Maybe it's nicer than Awesome?
+- conky/download_images should be automatic
+- dual window layout for awesomewm
