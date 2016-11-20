@@ -1,3 +1,9 @@
+#!/bin/sh
+
+#add something like this to crontab to reload automatically
+#crontab -e
+#30 * * * * bash /home/lauri/dotfiles/conky/download_images
+
 curl www.yle.fi/tekstitv/images/P100_01.gif > $HOME/P100.gif
 curl www.yle.fi/tekstitv/images/P102_01.gif > $HOME/P102.gif
 curl www.yle.fi/tekstitv/images/P130_01.gif > $HOME/P130.gif
