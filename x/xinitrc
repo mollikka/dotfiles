@@ -42,7 +42,6 @@ xscreensaver -nosplash &
 
 unclutter &
 
-bash $HOME/dotfiles/conky/download_images
 conky &
 
 #finnish keyboard
