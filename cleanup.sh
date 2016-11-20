@@ -20,3 +20,4 @@ mv $HOME/.config/xfce4/terminal/terminalrc $HOME/old_dotfiles/
 mv $HOME/.config/OpenSCAD/OpenSCAD.conf $HOME/old_dotfiles/
 mv $HOME/.xscreensaver $HOME/old_dotfiles/
 mv $HOME/.config/conky $HOME/old_dotfiles/
+mv $HOME/.gimp-2.8 $HOME/old_dotfiles/
