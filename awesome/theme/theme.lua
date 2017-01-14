@@ -11,7 +11,7 @@
 barheight = 20
 
 normal_front = "#FEEACB"
-normal_back  = "#181B28"
+normal_back  = "#0a0b10"
 highlight_front = "#000000"
 highlight_back = "#FEEACB"--"#CC9393"
 
