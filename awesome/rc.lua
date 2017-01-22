@@ -2,6 +2,7 @@ package.path = package.path .. ';' .. os.getenv("HOME") .. '/.awesomeplugins/?.l
 package.path = package.path .. ';' .. os.getenv("HOME") .. '/.awesomeplugins/*/?.lua'
 package.path = package.path .. ';' .. os.getenv("HOME") .. '/.awesomeplugins/?/init.lua'
 
+definitionsfile = os.getenv("HOME") .. '/dotfiles/awesome/definitions.lua'
 programlist = os.getenv("HOME") .. '/dotfiles/awesome/programmenu.lua'
 widgetsfile = os.getenv("HOME") .. '/dotfiles/awesome/widgets.lua'
 shortcutsfile = os.getenv("HOME") .. '/dotfiles/awesome/shortcuts.lua'
@@ -22,25 +23,11 @@ local menubar = require("menubar")
 -- Addons
 local vicious = require("vicious")
 
--- {{{ Variable definitions
-terminal = "xfce4-terminal"
-web = "chromium"
-webmini = "chromium --app=http://reddit.com"
-internet = "wicd-client"
-mail = "thunderbird"
-files = "thunar"
-shutdown = "shutdown now"
-restart = "shutdown now -r"
-soundsettings = terminal .. " -x alsamixer"
-lockscreen = "xscreensaver-command -lock"
-volume_up = "amixer set Master 5%+"
-volume_down = "amixer set Master 5%-"
-screenshot = "screenshot.sh"
 
 modkey = "Mod4" --Mod4 is the branded logo button
 --- }}}
 
-
+dofile(definitionsfile)
 
 -- {{{ Error handling
 if awesome.startup_errors then
