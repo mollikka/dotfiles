@@ -105,6 +105,7 @@ globalkeys = awful.util.table.join(
 
 clientkeys = awful.util.table.join(
     awful.key({ modkey,           }, "F11",    function (c) awful.layout.inc(layouts,  1) end),
-    awful.key({ modkey,           }, "F4",     function (c) c:kill()                         end)
+    awful.key({ modkey,           }, "F4",     function (c) c:kill()     end),
+    awful.key({ modkey,           }, "Delete",    function (c) awesome.quit() end)
 )
 
