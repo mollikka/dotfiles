@@ -87,6 +87,9 @@ globalkeys = awful.util.table.join(
     -- Browser
     awful.key({ modkey,           }, "b", function () awful.util.spawn(web) end),
 
+    -- File browser
+    awful.key({ modkey,           }, "f", function () awful.util.spawn(files) end),
+
     -- Prompt
     awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
 
