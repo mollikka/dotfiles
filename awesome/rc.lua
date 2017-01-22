@@ -5,6 +5,7 @@ package.path = package.path .. ';' .. os.getenv("HOME") .. '/.awesomeplugins/?/i
 programlist = os.getenv("HOME") .. '/dotfiles/awesome/programmenu.lua'
 widgetsfile = os.getenv("HOME") .. '/dotfiles/awesome/widgets.lua'
 shortcutsfile = os.getenv("HOME") .. '/dotfiles/awesome/shortcuts.lua'
+layoutsfile = os.getenv("HOME") .. '/dotfiles/awesome/layouts.lua'
 
 -- Standard awesome library
 local gears = require("gears")
@@ -78,10 +79,7 @@ end
 -- }}}
 
 
--- {{{ Layouts
-  layouts = {awful.layout.suit.tile,
-             awful.layout.suit.max}
--- }}}
+dofile(layoutsfile)
 
 -- {{{ Tags
   tags = {

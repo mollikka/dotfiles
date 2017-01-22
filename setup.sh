@@ -35,4 +35,4 @@ git clone git://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.zshplugi
 
 #load awesome plugins
 git clone http://git.sysphere.org/vicious $HOME/.awesomeplugins/vicious
-
+git clone https://github.com/copycat-killer/vain-again.git $HOME/.awesomeplugins/vain
