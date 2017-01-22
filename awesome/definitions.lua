@@ -13,4 +13,5 @@ volume_up = "amixer set Master 5%+"
 volume_down = "amixer set Master 5%-"
 screenshot = "screenshot.sh"
 backlight = "backlight.sh"
-
+---laptop mode enables things like battery display on top bar
+laptopmode = true
