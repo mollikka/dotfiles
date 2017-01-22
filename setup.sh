@@ -25,8 +25,6 @@ ln -s $HOME/dotfiles/xfce4/terminalrc $HOME/.config/xfce4/terminal/terminalrc
 mkdir -p $HOME/.config/OpenSCAD/
 ln -s $HOME/dotfiles/openscad/openscad.conf $HOME/.config/OpenSCAD/OpenSCAD.conf
 ln -s $HOME/dotfiles/x/xscreensaver $HOME/.xscreensaver
-mkdir -p $HOME/.config/conky
-ln -s $HOME/dotfiles/conky/conky.conf $HOME/.config/conky/conky.conf
 ln -s $HOME/dotfiles/gimp $HOME/.gimp-2.8
 
 #load vim plugins
