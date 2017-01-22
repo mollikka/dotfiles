@@ -18,6 +18,8 @@ highlight_back = "#FEEACB"--"#CC9393"
 -- {{{ Main
 theme = {}
 theme.wallpaper = "~/dotfiles/awesome/theme/wp.svg"
+theme.wallpaper_bg_color = "#1e222f"
+
 -- }}}
 
 -- {{{ Styles

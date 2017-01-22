@@ -60,7 +60,7 @@ beautiful.init(awful.util.getdir("config") .. "/" .. "theme/theme.lua")
 -- {{{ Wallpaper
 if beautiful.wallpaper then
     for s = 1, screen.count() do
-        gears.wallpaper.centered(beautiful.wallpaper, s)
+        gears.wallpaper.centered(beautiful.wallpaper, s, beautiful.wallpaper_bg_color)
     end
 end
 -- }}}
