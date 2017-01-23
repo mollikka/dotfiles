@@ -2,7 +2,7 @@
 terminal = "xfce4-terminal"
 web = "chromium"
 webmini = "chromium --app=http://reddit.com"
-internet = "wicd-client"
+internet = terminal .. " -x wicd-curses"
 mail = "thunderbird"
 files = "thunar"
 shutdown = "shutdown now"
