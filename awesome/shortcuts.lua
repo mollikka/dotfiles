@@ -73,8 +73,6 @@ globalkeys = awful.util.table.join(
           client.focus = c
         end),
 
-    awful.key({ modkey,           }, "m", function () mymainmenu:show() end),
-
     -- Standard program
     awful.key({ modkey,           }, "t", function () awful.util.spawn(terminal) end),
 

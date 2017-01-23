@@ -3,7 +3,6 @@ package.path = package.path .. ';' .. os.getenv("HOME") .. '/.awesomeplugins/*/?
 package.path = package.path .. ';' .. os.getenv("HOME") .. '/.awesomeplugins/?/init.lua'
 
 definitionsfile = os.getenv("HOME") .. '/dotfiles/awesome/definitions.lua'
-programlist = os.getenv("HOME") .. '/dotfiles/awesome/programmenu.lua'
 widgetsfile = os.getenv("HOME") .. '/dotfiles/awesome/widgets.lua'
 shortcutsfile = os.getenv("HOME") .. '/dotfiles/awesome/shortcuts.lua'
 layoutsfile = os.getenv("HOME") .. '/dotfiles/awesome/layouts.lua'
@@ -78,37 +77,6 @@ dofile(layoutsfile)
   end
 -- }}}
 
-
--- {{{ Menu
-
-browsermenu = {
-  { "normal", web },
-  { "compact", webmini },
-  { "mail", mail },
-}
-
-settingsmenu = {
-  { "sound", soundsettings },
-  { "wlan", internet },
-}
-
-awesomemenu = {
-  { "restart", awesome.restart },
-  { "quit", awesome.quit},
-}
-
-dofile(programlist)
-
-mymainmenu = awful.menu({ items = {
-    { "web", browsermenu },
-    { "apps", myprograms },
-    { "files", files },
-    { "settings", settingsmenu },
-    { "awesome", awesomemenu },
-    { "restart", restart},
-    { "shutdown", shutdown},
-  }
-})
 
 mylauncher = awful.widget.launcher({
   image = beautiful.awesome_icon,
