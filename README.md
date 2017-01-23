@@ -30,6 +30,7 @@ Notice the original links in many of the config files.
 - `Meta-F7` Hide mouse
 - `Meta-F11` Full screen
 - `Meta-F12` Lock screen
+- `Meta-Delete` Shutdown Awesome
 - `Print screen` Take a screenshot
 
 `h`,`j`,`k`,`l` work in place of direction keys.
