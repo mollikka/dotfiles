@@ -1,11 +1,12 @@
 local awful = require("awful")
+local defs = require("definitions")
+local layouts = require("layouts")
 
+local shortcuts = {}
 
-
-
-
+local modkey = "Mod4" --Mod4 is the branded logo button
 -- {{{ Key bindings
-globalkeys = awful.util.table.join(
+shortcuts.globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "Tab",   function()
                                                       awful.client.focus.byidx(1) 
                                                       if client.focus then client.focus:raise() end
@@ -74,19 +75,19 @@ globalkeys = awful.util.table.join(
         end),
 
     -- Standard program
-    awful.key({ modkey,           }, "t", function () awful.util.spawn(terminal) end),
+    awful.key({ modkey,           }, "t", function () awful.util.spawn(defs.terminal) end),
 
     -- Sound mixer
-    awful.key({ modkey,           }, "s", function () awful.util.spawn(soundsettings) end),
+    awful.key({ modkey,           }, "s", function () awful.util.spawn(defs.soundsettings) end),
 
     -- WLAN settings
-    awful.key({ modkey,           }, "w", function () awful.util.spawn(internet) end),
+    awful.key({ modkey,           }, "w", function () awful.util.spawn(defs.internet) end),
 
     -- Browser
-    awful.key({ modkey,           }, "b", function () awful.util.spawn(web) end),
+    awful.key({ modkey,           }, "b", function () awful.util.spawn(defs.web) end),
 
     -- File browser
-    awful.key({ modkey,           }, "f", function () awful.util.spawn(files) end),
+    awful.key({ modkey,           }, "f", function () awful.util.spawn(defs.files) end),
 
     -- Prompt
     awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
@@ -98,15 +99,15 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey            }, "F7", function () mouse.coords({ x=0, y=0 }) end),
 
     -- Lock screen
-    awful.key({ modkey,           }, "F12", function () awful.util.spawn(lockscreen) end),
+    awful.key({ modkey,           }, "F12", function () awful.util.spawn(defs.lockscreen) end),
 
     -- Screenshot
-    awful.key({                   }, "Print", function () awful.util.spawn(screenshot) end)
+    awful.key({                   }, "Print", function () awful.util.spawn(defs.screenshot) end)
 )
 
-clientkeys = awful.util.table.join(
-    awful.key({ modkey,           }, "F11",    function (c) awful.layout.inc(layouts,  1) end),
+shortcuts.clientkeys = awful.util.table.join(
+    awful.key({ modkey,           }, "F11",    function (c) awful.layout.inc(layouts.layouts,  1) end),
     awful.key({ modkey,           }, "F4",     function (c) c:kill()     end),
     awful.key({ modkey,           }, "Delete",    function (c) awesome.quit() end)
 )
-
+return shortcuts

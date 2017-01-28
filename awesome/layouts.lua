@@ -1,10 +1,12 @@
 local awful = require("awful")
 local vain = require("vain")
 
+local layouts = {}
+
 --- dual layout draws first two clients side by side splitscreen and ignores the rest
-local duallayout = {}
-duallayout.name = "duallayout"
-duallayout.arrange = function(p)
+layouts.duallayout = {}
+layouts.duallayout.name = "duallayout"
+layouts.duallayout.arrange = function(p)
 
   local work_x = p.workarea.x
   local work_y = p.workarea.y
@@ -34,7 +36,9 @@ end
 --- rc.lua sort of assumes that there are two layouts here
 
 -- {{{ Layouts
-  layouts = {duallayout,
+layouts.layouts = {layouts.duallayout,
              awful.layout.suit.max}
 -- }}}
+
+return layouts
 

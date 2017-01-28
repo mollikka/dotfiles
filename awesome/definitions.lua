@@ -1,17 +1,20 @@
+local definitions = {}
 -- {{{ Variable definitions
-terminal = "xfce4-terminal"
-web = "chromium"
-webmini = "chromium --app=http://reddit.com"
-internet = terminal .. " -x wicd-curses"
-mail = "thunderbird"
-files = "thunar"
-shutdown = "shutdown now"
-restart = "shutdown now -r"
-soundsettings = terminal .. " -x alsamixer"
-lockscreen = "xscreensaver-command -lock"
-volume_up = "amixer set Master 5%+"
-volume_down = "amixer set Master 5%-"
-screenshot = "screenshot.sh"
-backlight = "backlight.sh"
+local terminal = "xfce4-terminal"
+definitions.terminal = terminal
+definitions.web = "chromium"
+definitions.webmini = "chromium --app=http://reddit.com"
+definitions.internet = terminal .. " -x wicd-curses"
+definitions.mail = "thunderbird"
+definitions.files = "thunar"
+definitions.shutdown = "shutdown now"
+definitions.restart = "shutdown now -r"
+definitions.soundsettings = terminal .. " -x alsamixer"
+definitions.lockscreen = "xscreensaver-command -lock"
+definitions.volume_up = "amixer set Master 5%+"
+definitions.volume_down = "amixer set Master 5%-"
+definitions.screenshot = "screenshot.sh"
+definitions.backlight = "backlight.sh"
 ---laptop mode enables things like battery display on top bar
-laptopmode = true
+definitions.laptopmode = true
+return definitions

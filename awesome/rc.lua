@@ -2,11 +2,6 @@ package.path = package.path .. ';' .. os.getenv("HOME") .. '/.awesomeplugins/?.l
 package.path = package.path .. ';' .. os.getenv("HOME") .. '/.awesomeplugins/*/?.lua'
 package.path = package.path .. ';' .. os.getenv("HOME") .. '/.awesomeplugins/?/init.lua'
 
-definitionsfile = os.getenv("HOME") .. '/dotfiles/awesome/definitions.lua'
-widgetsfile = os.getenv("HOME") .. '/dotfiles/awesome/widgets.lua'
-shortcutsfile = os.getenv("HOME") .. '/dotfiles/awesome/shortcuts.lua'
-layoutsfile = os.getenv("HOME") .. '/dotfiles/awesome/layouts.lua'
-
 -- Standard awesome library
 local gears = require("gears")
 local awful = require("awful")
@@ -21,12 +16,13 @@ local naughty = require("naughty")
 local menubar = require("menubar")
 -- Addons
 local vicious = require("vicious")
+-- My own config files
+local layouts = require("layouts")
+local widgets = require("widgets")
+local shortcuts = require("shortcuts")
+local defs = require("definitions")
 
-
-modkey = "Mod4" --Mod4 is the branded logo button
 --- }}}
-
-dofile(definitionsfile)
 
 -- {{{ Error handling
 if awesome.startup_errors then
@@ -51,7 +47,6 @@ do
 end
 -- }}}
 
-
 -- {{{ Theme
 beautiful.init(awful.util.getdir("config") .. "/" .. "theme/theme.lua")
 --- }}}
@@ -64,34 +59,18 @@ if beautiful.wallpaper then
 end
 -- }}}
 
-
-dofile(layoutsfile)
-
 -- {{{ Tags
   tags = {
     names = {"A","B","C"},
-    layout = {layouts[1],layouts[1],layouts[1]}
+    layout = {layouts.layouts[1],layouts.layouts[1],layouts.layouts[1]}
   }
   for s = 1, screen.count() do
     tags[s] = awful.tag(tags.names, s, tags.layout)
   end
 -- }}}
 
-
-mylauncher = awful.widget.launcher({
-  image = beautiful.awesome_icon,
-  menu = mymainmenu
-})
-
-menubar.utils.terminal = terminal -- terminal for applications that require it
+menubar.utils.terminal = defs.terminal -- terminal for applications that require it
 -- }}}
-
-
--- {{{ Wibox
-
-dofile(widgetsfile)
-
---- }}}
 
 --- BUILD IT ALL
 
@@ -115,7 +94,6 @@ for s = 1, screen.count() do
 
     -- Widgets that are aligned to the left
     local left_layout = wibox.layout.fixed.horizontal()
-    --left_layout:add(mylauncher)
     left_layout:add(mytaglist[s])
     left_layout:add(mypromptbox[s])
 
@@ -136,10 +114,8 @@ for s = 1, screen.count() do
 end
 -- }}}
 
-dofile(shortcutsfile)
-
 -- Set keys
-root.keys(globalkeys)
+root.keys(shortcuts.globalkeys)
 -- }}}
 
 -- {{{ Rules
@@ -151,18 +127,8 @@ awful.rules.rules = {
                      border_color = beautiful.border_normal,
                      focus = awful.client.focus.filter,
                      raise = true,
-                     keys = clientkeys,
+                     keys = shortcuts.clientkeys,
                      buttons = clientbuttons } },
-    { rule = { class = "Conky" },
-      properties = {
-        floating = true,
-        sticky = true,
-        ontop = false,
-        focusable = false
-    }},
-    -- Set Firefox to always map on tags number 2 of screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { tag = tags[1][2] } },
 }
 -- }}}
 
