@@ -21,7 +21,7 @@ local layouts = require("layouts")
 local widgets = require("widgets")
 local shortcuts = require("shortcuts")
 local defs = require("definitions")
-
+local tags = require("tags")
 --- }}}
 
 -- {{{ Error handling
@@ -57,16 +57,6 @@ if beautiful.wallpaper then
         gears.wallpaper.fit(beautiful.wallpaper, s, beautiful.wallpaper_bg_color)
     end
 end
--- }}}
-
--- {{{ Tags
-  tags = {
-    names = {"A","B","C"},
-    layout = {layouts.layouts[1],layouts.layouts[1],layouts.layouts[1]}
-  }
-  for s = 1, screen.count() do
-    tags[s] = awful.tag(tags.names, s, tags.layout)
-  end
 -- }}}
 
 menubar.utils.terminal = defs.terminal -- terminal for applications that require it
