@@ -15,6 +15,7 @@ definitions.volume_up = "amixer set Master 5%+"
 definitions.volume_down = "amixer set Master 5%-"
 definitions.screenshot = "screenshot.sh"
 definitions.backlight = "backlight.sh"
+definitions.helpfile = os.getenv("HOME") .. '/dotfiles/SHORTCUTS.md'
 ---laptop mode enables things like battery display on top bar
 definitions.laptopmode = true
 return definitions

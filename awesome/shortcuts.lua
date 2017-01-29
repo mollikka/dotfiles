@@ -1,4 +1,6 @@
 local awful = require("awful")
+local naughty = require("naughty")
+
 local defs = require("definitions")
 local layouts = require("layouts")
 local tags = require("tags")
@@ -6,6 +8,22 @@ local tags = require("tags")
 local shortcuts = {}
 
 local modkey = "Mod4" --Mod4 is the branded logo button
+
+-- show key bindings
+local function show_help()
+  local file = io.open(defs.helpfile, "r")
+  if file then
+    local text = file:read "*a"
+    naughty.notify({ preset = naughty.config.presets.normal,
+                   title = "Shortcuts",
+                   text = text,
+                   position = "top_left",
+                   timeout = 30,
+                   })
+  end
+  file:close()
+end
+
 -- {{{ Key bindings
 shortcuts.globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "Tab",   function()
@@ -46,6 +64,10 @@ shortcuts.globalkeys = awful.util.table.join(
 
     -- Prompt
     awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
+
+    -- Show help
+    awful.key({ modkey            }, "F1", show_help),
+
 
     -- Restart Awesome
     awful.key({ modkey            }, "F5", function () awesome.restart() end),
