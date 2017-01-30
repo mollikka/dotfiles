@@ -1,15 +1,16 @@
 local definitions = {}
 -- {{{ Variable definitions
-local terminal = "xfce4-terminal"
+local terminal = "urxvt"
+local terminal_execute = "urxvt -e "
 definitions.terminal = terminal
 definitions.web = "chromium"
 definitions.webmini = "chromium --app=http://reddit.com"
-definitions.internet = terminal .. " -x wicd-curses"
+definitions.internet = terminal_execute .. "wicd-curses"
 definitions.mail = "thunderbird"
-definitions.files = terminal .. " -x mc"
+definitions.files = terminal_execute .. "mc"
 definitions.shutdown = "shutdown now"
 definitions.restart = "shutdown now -r"
-definitions.soundsettings = terminal .. " -x alsamixer"
+definitions.soundsettings = terminal_execute .. "alsamixer"
 definitions.lockscreen = "xscreensaver-command -lock"
 definitions.volume_up = "amixer set Master 5%+"
 definitions.volume_down = "amixer set Master 5%-"

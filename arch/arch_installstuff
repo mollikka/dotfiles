@@ -1,5 +1,5 @@
 #!/bin/sh
 
-sudo pacman -S zsh git vim awesome unclutter xscreensaver imagemagick chromium thunderbird mc xfce4-terminal alsa-utils
+sudo pacman -S zsh git vim awesome unclutter xscreensaver imagemagick chromium thunderbird mc rxvt-unicode alsa-utils
 
 yaourt -S wicd-patched
