@@ -22,6 +22,7 @@ local widgets = require("widgets")
 local shortcuts = require("shortcuts")
 local defs = require("definitions")
 local tags = require("tags")
+local topbar = require("topbar")
 --- }}}
 
 -- {{{ Error handling
@@ -64,45 +65,6 @@ menubar.utils.terminal = defs.terminal -- terminal for applications that require
 
 --- BUILD IT ALL
 
--- Create a wibox for each screen and add it
-mywibox = {}
-mypromptbox = {}
-mytasklist = {}
-mytaglist = {}
-
-for s = 1, screen.count() do
-    -- Create a promptbox for each screen
-    mypromptbox[s] = awful.widget.prompt()
-    -- Create a taglist widget
-    mytaglist[s] = awful.widget.taglist(s, awful.widget.taglist.filter.all)
-
-    -- Create a tasklist widget
-    mytasklist[s] = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags)
-
-    -- Create the wibox
-    mywibox[s] = awful.wibox({ position = "top", screen = s, height = theme.statbar_height })
-
-    -- Widgets that are aligned to the left
-    local left_layout = wibox.layout.fixed.horizontal()
-    left_layout:add(mytaglist[s])
-    left_layout:add(mypromptbox[s])
-
-    -- Widgets that are aligned to the right
-    local right_layout = wibox.layout.fixed.horizontal()
-    if s == 1 then right_layout:add(wibox.widget.systray()) end
-    for w = 1, #widgets do
-      right_layout:add(widgets[w])
-    end
-
-    -- Now bring it all together (with the tasklist in the middle)
-    local layout = wibox.layout.align.horizontal()
-    layout:set_left(left_layout)
-    layout:set_middle(mytasklist[s])
-    layout:set_right(right_layout)
-
-    mywibox[s]:set_widget(layout)
-end
--- }}}
 
 -- Set keys
 root.keys(shortcuts.globalkeys)

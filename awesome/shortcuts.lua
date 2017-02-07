@@ -4,6 +4,7 @@ local naughty = require("naughty")
 local defs = require("definitions")
 local layouts = require("layouts")
 local tags = require("tags")
+local topbar = require("topbar")
 
 local shortcuts = {}
 
@@ -63,7 +64,7 @@ shortcuts.globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "f", function () awful.util.spawn(defs.files) end),
 
     -- Prompt
-    awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
+    awful.key({ modkey },            "r",     topbar.use_prompt),
 
     -- Show help
     awful.key({ modkey            }, "F1", show_help),
