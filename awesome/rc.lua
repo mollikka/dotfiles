@@ -63,9 +63,6 @@ end
 menubar.utils.terminal = defs.terminal -- terminal for applications that require it
 -- }}}
 
---- BUILD IT ALL
-
-
 -- Set keys
 root.keys(shortcuts.globalkeys)
 -- }}}
