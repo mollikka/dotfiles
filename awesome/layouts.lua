@@ -19,16 +19,20 @@ layouts.duallayout.arrange = function(p)
   -- I regret nothing
   for i = 1,#clients
   do
-    local client = clients[i]
+    local c = clients[i]
     local g = {}
 
     g.width = work_width/2
     g.height = work_height
 
-    g.x = work_x + work_width/2 * (i - 1)
+    if (c == client.focus and i > 2) then
+      g.x = work_x + work_width/2;
+    else
+      g.x = work_x + work_width/2 * (i - 1)
+    end
     g.y = work_y
 
-    client:geometry(g)
+    c:geometry(g)
 
   end
 end
