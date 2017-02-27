@@ -5,6 +5,7 @@ local terminal_execute = "urxvt -e "
 definitions.terminal = terminal
 definitions.web = "chromium"
 definitions.webmini = "chromium --app=http://reddit.com"
+definitions.email = "thunderbird"
 definitions.internet = terminal_execute .. "wicd-curses"
 definitions.mail = "thunderbird"
 definitions.files = terminal_execute .. "mc"
