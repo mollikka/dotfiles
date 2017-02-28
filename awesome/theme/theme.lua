@@ -10,15 +10,26 @@
 
 barheight = 20
 
-normal_front = "#FEEACB"
-normal_back  = "#0a0b10"
-highlight_front = "#000000"
-highlight_back = "#FEEACB"--"#CC9393"
+normal_front = "#ffffff";--"#FEEACB"
+normal_back  = "#181b28";--"#282d3e"
+highlight_front = "#000000";
+highlight_back = "#ffffff";--"#FEEACB"--"#CC9393"
 
 -- {{{ Main
 theme = {}
-theme.wallpaper = "~/dotfiles/awesome/theme/wp.svg"
-theme.wallpaper_bg_color = "#1e222f"
+
+math.randomseed(os.time())
+wp_rnd = math.random(3)
+
+if (wp_rnd == 1) then
+  theme.wallpaper = "~/dotfiles/awesome/theme/kuukuosi1_3840x2160_right.svg"
+else if (wp_rnd == 2) then
+  theme.wallpaper = "~/dotfiles/awesome/theme/kuukuosi1_3840x2160_center.svg"
+else
+  theme.wallpaper = "~/dotfiles/awesome/theme/kuukuosi1_3840x2160_left.svg"
+end end
+
+theme.wallpaper_bg_color = "#181b28"
 
 -- }}}
 
