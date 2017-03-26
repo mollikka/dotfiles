@@ -69,9 +69,11 @@ shortcuts.globalkeys = awful.util.table.join(
     -- Show help
     awful.key({ modkey            }, "F1", show_help),
 
-
     -- Restart Awesome
     awful.key({ modkey            }, "F5", function () awesome.restart() end),
+
+    -- Screen brightness
+    awful.key({ modkey            }, "F6", function () awful.util.spawn(defs.backlight) end),
 
     -- Mouse out of the way
     awful.key({ modkey            }, "F7", function () mouse.coords({ x=0, y=0 }) end),
