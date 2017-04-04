@@ -25,11 +25,44 @@ layouts.duallayout.arrange = function(p)
     g.width = work_width/2
     g.height = work_height
 
-    if (c == client.focus and i > 2) then
-      g.x = work_x + work_width/2;
+    left_pos = work_x
+    right_pos = work_x + work_width/2
+    hide_pos = work_x + work_width
+
+    one_in_focus = clients[1] == client.focus
+    two_in_focus = clients[2] == client.focus
+    n_in_focus = not(one_in_focus) and not(two_in_focus)
+
+    if (c == client.focus) then
+      if (i == 1) then
+        g.x = left_pos
+      else
+        g.x = right_pos
+      end
     else
-      g.x = work_x + work_width/2 * (i - 1)
+      if (one_in_focus and i==2) then
+        g.x = right_pos
+      end
+      if (one_in_focus and i>2) then
+        g.x = hide_pos
+      end
+      if (two_in_focus and i==1) then
+        g.x = left_pos
+      end
+      if (two_in_focus and i>2) then
+        g.x = hide_pos
+      end
+      if (n_in_focus and i==1) then
+        g.x = left_pos
+      end
+      if (n_in_focus and i==2) then
+        g.x = hide_pos
+      end
+      if (n_in_focus and i>2) then
+        g.x = hide_pos
+      end
     end
+
     g.y = work_y
 
     c:geometry(g)
