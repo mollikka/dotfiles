@@ -51,12 +51,6 @@ shortcuts.globalkeys = awful.util.table.join(
     -- Standard program
     awful.key({ modkey,           }, "t", function () awful.util.spawn(defs.terminal) end),
 
-    -- Sound mixer
-    awful.key({ modkey,           }, "s", function () awful.util.spawn(defs.soundsettings) end),
-
-    -- WLAN settings
-    awful.key({ modkey,           }, "w", function () awful.util.spawn(defs.internet) end),
-
     -- Browser
     awful.key({ modkey,           }, "b", function () awful.util.spawn(defs.web) end),
 
@@ -69,6 +63,9 @@ shortcuts.globalkeys = awful.util.table.join(
     -- Show help
     awful.key({ modkey            }, "F1", show_help),
 
+    -- WLAN settings
+    awful.key({ modkey,           }, "F3", function () awful.util.spawn(defs.internet) end),
+
     -- Restart Awesome
     awful.key({ modkey            }, "F5", function () awesome.restart() end),
 
@@ -78,16 +75,27 @@ shortcuts.globalkeys = awful.util.table.join(
     -- Mouse out of the way
     awful.key({ modkey            }, "F7", function () mouse.coords({ x=0, y=0 }) end),
 
+    -- Sound mixer
+    awful.key({ modkey,           }, "F8", function () awful.util.spawn(defs.soundsettings) end),
+
     -- Lock screen
     awful.key({ modkey,           }, "F12", function () awful.util.spawn(defs.lockscreen) end),
 
     -- Screenshot
-    awful.key({                   }, "Print", function () awful.util.spawn(defs.screenshot) end)
+    awful.key({                   }, "Print", function () awful.util.spawn(defs.screenshot) end),
+
+    -- Shutdown Awesome
+    awful.key({ modkey, "Ctrl"    }, "Delete",    function (c) awesome.quit() end),
+
+    -- Shutdown system
+    awful.key({ modkey, "Shift"   }, "Delete",    function (c) awful.util.spawn(defs.shutdown) end),
+
+    -- Reboot system
+    awful.key({ modkey,           }, "Delete",    function (c) awful.util.spawn(defs.restart) end)
 )
 
 shortcuts.clientkeys = awful.util.table.join(
     awful.key({ modkey,           }, "F11",    function (c) awful.layout.inc(layouts.layouts,  1) end),
-    awful.key({ modkey,           }, "F4",     function (c) c:kill()     end),
-    awful.key({ modkey,           }, "Delete",    function (c) awesome.quit() end)
+    awful.key({ modkey,           }, "F4",     function (c) c:kill()     end)
 )
 return shortcuts

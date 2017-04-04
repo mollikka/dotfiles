@@ -1,8 +1,6 @@
 - `Meta-B` Open browser
-- `Meta-S` Open audio mixer
-- `Meta-T` Open terminal
-- `Meta-W` Open WLAN dialog
 - `Meta-M` Open email client
+- `Meta-T` Open terminal
 - `Meta-F` Open file browser
 
 - `Meta-R` Run command
@@ -12,12 +10,18 @@
 - `Meta-Up` `Meta-Down` Rotate tag focus
 - `Meta-Shift-Up` `Meta-Shift-Down` Rotate window tag
 
+- `Meta-F1` Show shortcut list
+- `Meta-F3` Open WLAN dialog
 - `Meta-F4` Close window
 - `Meta-F5` Restart Awesome
 - `Meta-F7` Hide mouse
+- `Meta-F8` Open audio mixer
 - `Meta-F11` Full screen
 - `Meta-F12` Lock screen
-- `Meta-Delete` Shutdown Awesome
 - `Print screen` Take a screenshot
+
+- `Meta-Ctrl-Del` Shutdown Awesome
+- `Meta-Shift-Del` Shutdown system
+- `M̀eta-Del` Reboot system
 
 `h`,`j`,`k`,`l` work in place of direction keys.

@@ -6,8 +6,6 @@ definitions.terminal = terminal
 definitions.web = "chromium"
 definitions.webmini = "chromium --app=http://reddit.com"
 definitions.email = "thunderbird"
-definitions.internet = terminal_execute .. "wicd-curses"
-definitions.mail = "thunderbird"
 definitions.internet = terminal_execute .. "sudo wifi-menu"
 definitions.shutdown = "shutdown now"
 definitions.restart = "shutdown now -r"
