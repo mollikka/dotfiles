@@ -2,4 +2,3 @@
 
 sudo pacman -S zsh git vim awesome unclutter xscreensaver imagemagick chromium thunderbird rxvt-unicode alsa-utils
 
-yaourt -S wicd-patched
