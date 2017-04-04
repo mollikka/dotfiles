@@ -10,6 +10,9 @@
 - `Meta-Up` `Meta-Down` Rotate tag focus
 - `Meta-Shift-Up` `Meta-Shift-Down` Rotate window tag
 
+- `Meta-Number` Focus on Nth window
+- `Meta-Shift-Number` Swap focused window with Nth window
+
 - `Meta-F1` Show shortcut list
 - `Meta-F3` Open WLAN dialog
 - `Meta-F4` Close window

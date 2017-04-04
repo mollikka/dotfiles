@@ -25,6 +25,29 @@ local function show_help()
   file:close()
 end
 
+local function select_nth_client(n)
+  local clients = awful.client.visible(awful.screen.focused())
+
+  if #clients >= n then
+    awful.client.jumpto(clients[n]);
+  end
+end
+
+local function swap_nth_client(n)
+  local clients = awful.client.visible(awful.screen.focused())
+  local focusid
+  for i=1,#clients do
+    if clients[i] == client.focus then
+      focusid = i
+      break
+    end
+  end
+
+  if #clients >= n then
+    awful.client.swap.byidx(n-focusid);
+  end
+end
+
 -- {{{ Key bindings
 shortcuts.globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "Tab",   function()
@@ -47,6 +70,29 @@ shortcuts.globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "j",      awful.tag.viewnext),
     awful.key({ modkey, "Shift"   }, "Down",   tags.movedown),
     awful.key({ modkey, "Shift"   }, "j",      tags.movedown),
+
+
+    awful.key({ modkey,           }, "1", function () select_nth_client(1) end),
+    awful.key({ modkey,           }, "2", function () select_nth_client(2) end),
+    awful.key({ modkey,           }, "3", function () select_nth_client(3) end),
+    awful.key({ modkey,           }, "4", function () select_nth_client(4) end),
+    awful.key({ modkey,           }, "5", function () select_nth_client(5) end),
+    awful.key({ modkey,           }, "6", function () select_nth_client(6) end),
+    awful.key({ modkey,           }, "7", function () select_nth_client(7) end),
+    awful.key({ modkey,           }, "8", function () select_nth_client(8) end),
+    awful.key({ modkey,           }, "9", function () select_nth_client(9) end),
+    awful.key({ modkey,           }, "0", function () select_nth_client(10) end),
+
+    awful.key({ modkey, "Shift"   }, "1", function () swap_nth_client(1) end),
+    awful.key({ modkey, "Shift"   }, "2", function () swap_nth_client(2) end),
+    awful.key({ modkey, "Shift"   }, "3", function () swap_nth_client(3) end),
+    awful.key({ modkey, "Shift"   }, "4", function () swap_nth_client(4) end),
+    awful.key({ modkey, "Shift"   }, "5", function () swap_nth_client(5) end),
+    awful.key({ modkey, "Shift"   }, "6", function () swap_nth_client(6) end),
+    awful.key({ modkey, "Shift"   }, "7", function () swap_nth_client(7) end),
+    awful.key({ modkey, "Shift"   }, "8", function () swap_nth_client(8) end),
+    awful.key({ modkey, "Shift"   }, "9", function () swap_nth_client(9) end),
+    awful.key({ modkey, "Shift"   }, "0", function () swap_nth_client(10) end),
 
     -- Standard program
     awful.key({ modkey,           }, "t", function () awful.util.spawn(defs.terminal) end),
