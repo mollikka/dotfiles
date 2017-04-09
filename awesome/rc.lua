@@ -18,7 +18,6 @@ local menubar = require("menubar")
 local vicious = require("vicious")
 -- My own config files
 local layouts = require("layouts")
-local widgets = require("widgets")
 local shortcuts = require("shortcuts")
 local defs = require("definitions")
 local tags = require("tags")
@@ -69,3 +68,8 @@ menubar.utils.terminal = defs.terminal
 root.keys(shortcuts.globalkeys)
 -- }}}
 
+-- {{{ Activate modules
+topbar.create()
+signals.create()
+tags.create()
+-- }}}

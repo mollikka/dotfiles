@@ -2,8 +2,10 @@ local awful = require("awful")
 local layouts = require("layouts")
 
 local tags = {}
-for s = 1, screen.count() do
-  tags[s] = awful.tag({"A","B","C"}, s, layouts.layouts[1])
+tags.create = function()
+  for s = 1, screen.count() do
+    tags[s] = awful.tag({"A","B","C"}, s, layouts.layouts[1])
+  end
 end
 
 tags.moveup = function (c)
