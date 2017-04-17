@@ -134,10 +134,10 @@ shortcuts.globalkeys = awful.util.table.join(
     awful.key({ modkey, "Ctrl"    }, "Delete",    function (c) awesome.quit() end),
 
     -- Shutdown system
-    awful.key({ modkey, "Shift"   }, "Delete",    function (c) awful.util.spawn(defs.shutdown) end),
+    awful.key({ modkey,           }, "Delete",    function (c) awful.util.spawn(defs.shutdown) end),
 
     -- Reboot system
-    awful.key({ modkey,           }, "Delete",    function (c) awful.util.spawn(defs.restart) end)
+    awful.key({ modkey, "Shift"   }, "Delete",    function (c) awful.util.spawn(defs.restart) end)
 )
 
 shortcuts.clientkeys = awful.util.table.join(
