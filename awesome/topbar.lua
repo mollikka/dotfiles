@@ -7,10 +7,11 @@ local widgets = require("widgets")
 
 topbar = {}
 
+topbar.mypromptbox = awful.widget.prompt()
+
 topbar.create = function()
   -- Create a wibox for each screen and add it
   local mywibox = {}
-  local mypromptbox = awful.widget.prompt()
   local mytasklist = {}
   local mytaglist = {}
 
@@ -28,7 +29,7 @@ topbar.create = function()
       -- Widgets that are aligned to the left
       local left_layout = wibox.layout.fixed.horizontal()
       left_layout:add(mytaglist[s])
-      left_layout:add(mypromptbox)
+      left_layout:add(topbar.mypromptbox)
 
       -- Widgets that are aligned to the right
       local right_layout = wibox.layout.fixed.horizontal()
@@ -47,9 +48,10 @@ topbar.create = function()
   end
   -- }}}
 
-  topbar.use_prompt = function()
-    mypromptbox:run()
-  end
+end
+
+topbar.use_prompt = function()
+  topbar.mypromptbox:run()
 end
 
 return topbar
