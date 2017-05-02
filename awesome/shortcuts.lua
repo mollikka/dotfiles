@@ -111,6 +111,7 @@ shortcuts.globalkeys = awful.util.table.join(
 
     -- WLAN settings
     awful.key({ modkey,           }, "F3", function () awful.util.spawn(defs.internet) end),
+    awful.key({ modkey,           }, "w", function () awful.util.spawn(defs.internet) end),
 
     -- Restart Awesome
     awful.key({ modkey            }, "F5", function () awesome.restart() end),
@@ -123,6 +124,7 @@ shortcuts.globalkeys = awful.util.table.join(
 
     -- Sound mixer
     awful.key({ modkey,           }, "F8", function () awful.util.spawn(defs.soundsettings) end),
+    awful.key({ modkey,           }, "s", function () awful.util.spawn(defs.soundsettings) end),
 
     -- Lock screen
     awful.key({ modkey,           }, "F12", function () awful.util.spawn(defs.lockscreen) end),
