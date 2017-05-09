@@ -10,18 +10,31 @@ local shortcuts = {}
 
 local modkey = "Mod4" --Mod4 is the branded logo button
 
--- show key bindings
-local function show_help()
-  local file = io.open(defs.helpfile, "r")
+
+local function show_file(file, title)
   if file then
     local text = file:read "*a"
     naughty.notify({ preset = naughty.config.presets.normal,
-                   title = "Shortcuts",
+                   title = title,
                    text = text,
                    position = "top_left",
                    timeout = 30,
+                   font = "DejaVu Sans Mono 12",
                    })
   end
+end
+
+-- show key bindings
+local function show_help()
+  local file = io.open(defs.helpfile, "r")
+  show_file(file, "Shortcuts")
+  file:close()
+end
+
+-- show calendar popup
+local function show_calendar()
+  local file = io.popen(defs.calendar_popup)
+  show_file(file, "Calendar")
   file:close()
 end
 
@@ -108,6 +121,9 @@ shortcuts.globalkeys = awful.util.table.join(
 
     -- Show help
     awful.key({ modkey            }, "F1", show_help),
+
+    -- Calendar popup
+    awful.key({ modkey,           }, "c", show_calendar),
 
     -- WLAN settings
     awful.key({ modkey,           }, "F3", function () awful.util.spawn(defs.internet) end),

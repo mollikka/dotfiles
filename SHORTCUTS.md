@@ -3,6 +3,8 @@
 - `Meta-T` Open terminal
 - `Meta-F` Open file browser
 
+- `Meta-C` Show calendar popup
+
 - `Meta-R` Run command
 
 - `Meta-Tab` `Meta-Left` `Meta-Right` Rotate window focus
