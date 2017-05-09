@@ -151,6 +151,9 @@ shortcuts.globalkeys = awful.util.table.join(
     -- Shutdown Awesome
     awful.key({ modkey, "Ctrl"    }, "Delete",    function (c) awesome.quit() end),
 
+    -- Restart Awesome
+    awful.key({ modkey,"Ctrl","Shift"}, "Delete", function () awesome.restart() end),
+
     -- Shutdown system
     awful.key({ modkey,           }, "Delete",    function (c) awful.util.spawn(defs.shutdown) end),
 

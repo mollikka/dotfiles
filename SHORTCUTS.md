@@ -1,32 +1,31 @@
+- `Meta-R` Run command
+
 - `Meta-B` Open browser
 - `Meta-M` Open email client
+- `Meta-S` `Meta-F8` Open audio mixer
 - `Meta-T` Open terminal
-- `Meta-F` Open file browser
+- `Meta-W` `Meta-F3` Open WLAN dialog
 
 - `Meta-C` Show calendar popup
-
-- `Meta-R` Run command
+- `Meta-F1` Show shortcut popup
 
 - `Meta-Tab` `Meta-Left` `Meta-Right` Rotate window focus
 - `Meta-Shift-Left` `Meta-Shift-Right` Rotate window position
 - `Meta-Up` `Meta-Down` Rotate tag focus
 - `Meta-Shift-Up` `Meta-Shift-Down` Rotate window tag
-
 - `Meta-Number` Focus on Nth window
 - `Meta-Shift-Number` Swap focused window with Nth window
 
-- `Meta-F1` Show shortcut list
-- `Meta-F3` `Meta-W` Open WLAN dialog
 - `Meta-F4` Close window
 - `Meta-F5` Restart Awesome
 - `Meta-F7` Hide mouse
-- `Meta-F8` `Meta-S` Open audio mixer
 - `Meta-F11` Full screen
 - `Meta-F12` Lock screen
 - `Print screen` Take a screenshot
 
+- `M̀eta-Del` Shutdown computer
 - `Meta-Ctrl-Del` Shutdown Awesome
-- `Meta-Shift-Del` Shutdown system
-- `M̀eta-Del` Reboot system
+- `Meta-Shift-Del` Restart computer
+- `Meta-Ctrl-Shift-Del` Restart Awesome
 
 `h`,`j`,`k`,`l` work in place of direction keys.
