@@ -17,6 +17,8 @@ definitions.screenshot = "screenshot.sh"
 definitions.backlight = "backlight.sh"
 definitions.helpfile = os.getenv("HOME") .. '/dotfiles/SHORTCUTS.md'
 definitions.calendar_popup = "cal -w3m"
+definitions.cpu_popup = "ps -Ao user,comm,pid,pcpu,%mem --sort=-pcpu | head -n 11"
+definitions.mem_popup = "ps -Ao user,comm,pid,pcpu,%mem --sort=-%mem | head -n 11"
 ---laptop mode enables things like battery display on top bar
 definitions.laptopmode = true
 return definitions

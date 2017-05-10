@@ -41,6 +41,16 @@ local function show_cmd_output(command, title)
   file:close()
 end
 
+local function dismiss_notifications()
+  for s in pairs(naughty.notifications) do
+    for p in pairs(naughty.notifications[s]) do
+      for i, notification in pairs(naughty.notifications[s][p]) do
+        notification.die()
+      end
+    end
+  end
+end
+
 local function select_nth_client(n)
   local clients = awful.client.visible(awful.screen.focused())
 
@@ -127,6 +137,15 @@ shortcuts.globalkeys = awful.util.table.join(
 
     -- Calendar popup
     awful.key({ modkey,           }, "c",  function () show_cmd_output(defs.calendar_popup, "Calendar") end),
+
+    -- Cpu popup
+    awful.key({ modkey,           }, "p",  function () show_cmd_output(defs.cpu_popup) end),
+
+    -- Mem popup
+    awful.key({ modkey,  "Shift"  }, "p",  function () show_cmd_output(defs.mem_popup) end),
+
+    -- Dismiss popups
+    awful.key({ modkey,           }, "Escape",  dismiss_notifications),
 
     -- WLAN settings
     awful.key({ modkey,           }, "F3", function () awful.util.spawn(defs.internet) end),
