@@ -5,51 +5,11 @@ local defs = require("definitions")
 local layouts = require("layouts")
 local tags = require("tags")
 local topbar = require("topbar")
+local notifs = require("notifications")
 
 local shortcuts = {}
 
 local modkey = "Mod4" --Mod4 is the branded logo button
-
-
-local function show_file(filename, title)
-  local file = io.open(filename, "r")
-  if file then
-    local text = file:read "*a"
-    naughty.notify({ preset = naughty.config.presets.normal,
-                   title = title,
-                   text = text,
-                   position = "top_left",
-                   timeout = 30,
-                   font = "DejaVu Sans Mono 12",
-                   })
-  end
-  file:close()
-end
-
-local function show_cmd_output(command, title)
-  local file = io.popen(command)
-  if file then
-    local text = file:read "*a"
-    naughty.notify({ preset = naughty.config.presets.normal,
-                   title = title,
-                   text = text,
-                   position = "top_left",
-                   timeout = 30,
-                   font = "DejaVu Sans Mono 12",
-                   })
-  end
-  file:close()
-end
-
-local function dismiss_notifications()
-  for s in pairs(naughty.notifications) do
-    for p in pairs(naughty.notifications[s]) do
-      for i, notification in pairs(naughty.notifications[s][p]) do
-        notification.die()
-      end
-    end
-  end
-end
 
 local function select_nth_client(n)
   local clients = awful.client.visible(awful.screen.focused())
@@ -133,19 +93,19 @@ shortcuts.globalkeys = awful.util.table.join(
     awful.key({ modkey },            "r",     topbar.use_prompt),
 
     -- Show help
-    awful.key({ modkey            }, "F1", function () show_file(defs.helpfile, "Shortcuts") end),
+    awful.key({ modkey            }, "F1", function () notifs.show_file(defs.helpfile, "Shortcuts") end),
 
     -- Calendar popup
-    awful.key({ modkey,           }, "c",  function () show_cmd_output(defs.calendar_popup, "Calendar") end),
+    awful.key({ modkey,           }, "c",  function () notifs.show_cmd_output(defs.calendar_popup, "Calendar") end),
 
     -- Cpu popup
-    awful.key({ modkey,           }, "p",  function () show_cmd_output(defs.cpu_popup) end),
+    awful.key({ modkey,           }, "p",  function () notifs.show_cmd_output(defs.cpu_popup) end),
 
     -- Mem popup
-    awful.key({ modkey,  "Shift"  }, "p",  function () show_cmd_output(defs.mem_popup) end),
+    awful.key({ modkey,  "Shift"  }, "p",  function () notifs.show_cmd_output(defs.mem_popup) end),
 
     -- Dismiss popups
-    awful.key({ modkey,           }, "Escape",  dismiss_notifications),
+    awful.key({ modkey,           }, "Escape",  notifs.dismiss_notifications),
 
     -- WLAN settings
     awful.key({ modkey,           }, "F3", function () awful.util.spawn(defs.internet) end),
