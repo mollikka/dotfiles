@@ -7,6 +7,8 @@
 - `Meta-W` `Meta-F3` Open WLAN dialog
 
 - `Meta-C` Show calendar popup
+- `Meta-P` Show cpu intensive programs popup
+- `Meta-Shift-P` Show memory intensive programs popup
 - `Meta-F1` Show shortcut popup
 
 - `Meta-Tab` `Meta-Left` `Meta-Right` Rotate window focus
