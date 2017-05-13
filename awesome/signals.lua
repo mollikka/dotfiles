@@ -16,6 +16,7 @@ signals.create = function()
                        focus = awful.client.focus.filter,
                        raise = true,
                        keys = shortcuts.clientkeys,
+                       size_hints_honor = false,
                        buttons = clientbuttons } },
   }
   -- }}}

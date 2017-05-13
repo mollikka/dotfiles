@@ -24,8 +24,8 @@ layouts.duallayout.arrange = function(p)
     local g = {}
     local in_focus = (c == client.focus)
 
-    g.width = work_width/2
-    g.height = work_height
+    g.width = work_width/2 - c.border_width*2
+    g.height = work_height - c.border_width*2
 
     if (i == 1) then
       g.x = left_pos

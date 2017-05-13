@@ -13,7 +13,7 @@ barheight = 20
 normal_front = "#ffffff";--"#FEEACB"
 normal_back  = "#181b28";--"#282d3e"
 highlight_front = "#000000";
-highlight_back = "#ffffff";--"#FEEACB"--"#CC9393"
+highlight_back = "#dddddd";--"#FEEACB"--"#CC9393"
 
 -- {{{ Main
 theme = {}
@@ -47,10 +47,11 @@ theme.bg_systray = normal_back
 -- }}}
 
 -- {{{ Borders
-theme.border_width  = 2
+theme.border_width  = 3
 theme.border_normal = normal_back
 theme.border_focus  = highlight_back --"#6F6F6F"
 theme.border_marked = "FF0000"
+
 -- }}}
 
 -- {{{ Mouse finder
