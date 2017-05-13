@@ -17,6 +17,8 @@ signals.create = function()
                        raise = true,
                        keys = shortcuts.clientkeys,
                        size_hints_honor = false,
+                       maximized_horizontal = false,
+                       maximized_vertical = false,
                        buttons = clientbuttons } },
   }
   -- }}}
