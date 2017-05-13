@@ -34,6 +34,15 @@ local function swap_nth_client(n)
   end
 end
 
+local function see_through_client(c)
+  local glass_opacity = 0.68
+  if c.opacity == glass_opacity then
+    client.focus.opacity = 1
+  else
+    c.opacity = glass_opacity
+  end
+end
+
 -- {{{ Key bindings
 shortcuts.globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "Tab",   function()
@@ -145,6 +154,7 @@ shortcuts.globalkeys = awful.util.table.join(
 
 shortcuts.clientkeys = awful.util.table.join(
     awful.key({ modkey,           }, "F11",    function (c) awful.layout.inc(layouts.layouts,  1) end),
+    awful.key({ modkey, "Shift"   }, "F11",    function (c) see_through_client(c) end),
     awful.key({ modkey,           }, "F4",     function (c) c:kill()     end)
 )
 return shortcuts

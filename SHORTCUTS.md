@@ -22,6 +22,7 @@
 - `Meta-F5` Restart Awesome
 - `Meta-F7` Hide mouse
 - `Meta-F11` Full screen
+- `Meta-Shift-F11` See through focused client
 - `Meta-F12` Lock screen
 - `Print screen` Take a screenshot
 
