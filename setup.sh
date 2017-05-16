@@ -20,8 +20,6 @@ ln -s $HOME/dotfiles/vim/vimrc $HOME/.vimrc
 ln -s $HOME/dotfiles/git/gitconfig $HOME/.gitconfig
 ln -s $HOME/dotfiles/x/xinitrc $HOME/.xinitrc
 ln -s $HOME/dotfiles/awesome $HOME/.config/awesome
-mkdir -p $HOME/.config/xfce4/terminal/
-ln -s $HOME/dotfiles/xfce4/terminalrc $HOME/.config/xfce4/terminal/terminalrc
 mkdir -p $HOME/.config/OpenSCAD/
 ln -s $HOME/dotfiles/openscad/openscad.conf $HOME/.config/OpenSCAD/OpenSCAD.conf
 ln -s $HOME/dotfiles/x/xscreensaver $HOME/.xscreensaver
