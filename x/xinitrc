@@ -41,7 +41,7 @@ fi
 xscreensaver -nosplash &
 
 unclutter &
-compton -c &
+compton --config "$HOME/dotfiles/x/compton.conf" &
 #finnish keyboard
 setxkbmap fi
 #disable caps lock (to reset: setxkbmap -option)

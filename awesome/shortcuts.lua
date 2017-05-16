@@ -35,7 +35,7 @@ local function swap_nth_client(n)
 end
 
 local function see_through_client(c)
-  local glass_opacity = 0.68
+  local glass_opacity = 0.8
   if c.opacity == glass_opacity then
     client.focus.opacity = 1
   else
