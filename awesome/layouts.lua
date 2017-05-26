@@ -18,18 +18,28 @@ layouts.duallayout.arrange = function(p)
   local right_pos = work_x + work_width/2
   local hide_pos = work_x + work_width
 
+  local focus_id = 0
+  for i = 1,#clients do
+    local c = clients[i]
+    local in_focus = (c == client.focus)
+    if in_focus then
+      focus_id = i
+      break
+    end
+  end
+
   for i = 1,#clients do
 
     local c = clients[i]
     local g = {}
-    local in_focus = (c == client.focus)
+    local in_focus = (i == focus_id)
 
     g.width = work_width/2 - c.border_width*2
     g.height = work_height - c.border_width*2
 
     if (i == 1) then
       g.x = left_pos
-    else if (i == 2) then
+    else if (i == 2) and (focus_id < 3) then
       g.x = right_pos
     else if (in_focus) then
       g.x = right_pos
