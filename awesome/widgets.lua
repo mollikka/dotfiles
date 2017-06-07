@@ -8,7 +8,7 @@ vicious.register(datewidget, vicious.widgets.date,"  %a %Y-%m-%d %H:%M:%S ", 1);
 
 local batterywidget = wibox.widget.textbox()
 if defs.laptopmode then
-  vicious.register(batterywidget, vicious.widgets.bat, "  BAT: $3",60, "BAT1")
+  vicious.register(batterywidget, vicious.widgets.bat, "  BAT: $3 ",60, "BAT1")
 end
 
 local volumewidget = wibox.widget.textbox()
