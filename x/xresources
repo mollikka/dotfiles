@@ -64,3 +64,7 @@ URxvt.perl-ext: default,url-select
 URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.url-select.launcher: /usr/bin/xdg-open
 URxvt.url-select.underline: true
+
+!! scrolling hotkeys
+URxvt.keysym.Shift-Up: command:\033]720;1\007
+URxvt.keysym.Shift-Down: command:\033]721;1\007
