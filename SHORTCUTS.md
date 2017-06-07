@@ -26,7 +26,7 @@
 - `Meta-F12` Lock screen
 - `Print screen` Take a screenshot
 
-- `M̀eta-Del` Shutdown computer
+- `Meta-Del` Shutdown computer
 - `Meta-Ctrl-Del` Shutdown Awesome
 - `Meta-Shift-Del` Restart computer
 - `Meta-Ctrl-Shift-Del` Restart Awesome
