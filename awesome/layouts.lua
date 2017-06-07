@@ -1,6 +1,8 @@
 local awful = require("awful")
 local vain = require("vain")
 
+local definitions = require("definitions")
+
 local layouts = {}
 
 local get_focus_id = function(clients)
@@ -33,11 +35,6 @@ layouts.browsingtriple.arrange = function(p)
   local hide_pos = work_x + work_width
 
   local focus_id = get_focus_id(clients)
-
-  if (#clients < 3) then
-    layouts.duallayout.arrange(p)
-    return
-  end
 
   for i=1,#clients do
 
@@ -95,14 +92,20 @@ layouts.duallayout.arrange = function(p)
       g.x = hide_pos
     end end end
     g.y = work_y
+
     c:geometry(g)
   end
 end
 
 -- {{{ Layouts
+if definitions.laptopmode then
+layouts.layouts = {layouts.duallayout,
+             awful.layout.suit.max}
+else
 layouts.layouts = {layouts.duallayout,
               layouts.browsingtriple,
              awful.layout.suit.max}
+end
 -- }}}
 
 return layouts
