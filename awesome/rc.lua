@@ -25,6 +25,8 @@ local topbar = require("topbar")
 local signals = require("signals")
 --- }}}
 
+naughty.notify({ title = "Infoscreen mode loaded!" })
+
 -- {{{ Error handling
 if awesome.startup_errors then
     naughty.notify({ preset = naughty.config.presets.critical,
@@ -69,7 +71,14 @@ root.keys(shortcuts.globalkeys)
 -- }}}
 
 -- {{{ Activate modules
-topbar.create()
+-- topbar.create()
 signals.create()
-tags.create()
+for s = 1, screen.count() do
+  tags[s] = awful.tag({"Infoscreen"}, s, awful.layout.suit.fair)
+end
 -- }}}
+
+local terminal_execute = function(cmd) return "urxvt -e " .. cmd end
+awful.util.spawn(terminal_execute("python3 /home/lauri/infoscreen/display_news_feed.py"))
+awful.util.spawn(terminal_execute("python3 /home/lauri/infoscreen/display_youtubes.py"))
+awful.util.spawn(terminal_execute("python3 /home/lauri/infoscreen/display_bus_timetable.py"))

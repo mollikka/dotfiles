@@ -8,28 +8,17 @@
 -- Alternative icon sets and widget icons:
 --  * http://awesome.naquadah.org/wiki/Nice_Icons
 
-barheight = 20
+barheight = 10
 
 normal_front = "#ffffff";--"#FEEACB"
-normal_back  = "#181b28";--"#282d3e"
+normal_back  = "#000000";--"#282d3e"
 highlight_front = "#000000";
-highlight_back = "#dddddd";--"#FEEACB"--"#CC9393"
+highlight_back = "#ffffff";--"#FEEACB"--"#CC9393"
 
 -- {{{ Main
 theme = {}
 
-math.randomseed(os.time())
-wp_rnd = math.random(3)
-
-if (wp_rnd == 1) then
-  theme.wallpaper = "~/dotfiles/awesome/theme/kuukuosi1_3840x2160_right.svg"
-else if (wp_rnd == 2) then
-  theme.wallpaper = "~/dotfiles/awesome/theme/kuukuosi1_3840x2160_center.svg"
-else
-  theme.wallpaper = "~/dotfiles/awesome/theme/kuukuosi1_3840x2160_left.svg"
-end end
-
-theme.wallpaper_bg_color = "#181b28"
+theme.wallpaper_bg_color = "#000000"
 
 -- }}}
 
