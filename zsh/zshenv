@@ -4,7 +4,7 @@ setopt NO_GLOBAL_RCS
 
 # DEFAULT PATH
 PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/bin"
-export PATH=$HOME/dotfiles/arch:$PATH
+export PATH=$HOME/dotfiles/linux_distros:$PATH
 export PATH=$HOME/dotfiles/scripts:$PATH
 
 # PREFERENCES
