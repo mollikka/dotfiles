@@ -1,0 +1,4 @@
+#!/bin/sh
+
+sudo zypper install zsh git vim awesome unclutter xscreensaver ImageMagick chromium rxvt-unicode alsa-utils urxvt-perls compton
+
