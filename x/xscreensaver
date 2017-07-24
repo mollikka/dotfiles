@@ -1,5 +1,5 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.36 for lauri on Sun Oct 16 21:58:24 2016.
+# Written by xscreensaver-demo 5.37 for lauri on Mon Jul 24 15:14:00 2017.
 # https://www.jwz.org/xscreensaver/
 
 timeout:	0:10:00
@@ -168,7 +168,7 @@ programs:								      \
 - GL: 				flurry -root				    \n\
 - GL: 				glblur -root				    \n\
 - GL: 				glsnake -root				    \n\
--				halftone -root				    \n\
+				halftone -root				    \n\
 - GL: 				juggler3d -root				    \n\
 - GL: 				lavalite -root				    \n\
 -				polyominoes -root -identical -cycles 5000   \n\
@@ -245,7 +245,7 @@ programs:								      \
 - GL: 				moebiusgears -root			    \n\
 - GL: 				voronoi -root -points 59 -point-size 0	      \
 				  -point-delay 1.1 -zoom-delay 14	    \n\
-- GL: 				hypnowheel -root			    \n\
+  GL: 				hypnowheel -root			    \n\
 - GL: 				klein -root				    \n\
 -				lcdscrub -root				    \n\
 - GL: 				photopile -root				    \n\
@@ -280,6 +280,7 @@ programs:								      \
 - GL: 				discoball -root				    \n\
 - GL: 				hexstrut -root				    \n\
 - GL: 				splodesic -root -depth 5		    \n\
+- GL: 				vigilance -root				    \n\
 
 
 pointerPollTime:    0:00:05
