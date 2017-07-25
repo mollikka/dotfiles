@@ -6,7 +6,8 @@ Notice the original links in many of the config files.
 
 ## Setup
 
+1. `cd`
 1. `git clone git@github.com:mollikka/dotfiles.git`
 2. `cd dotfiles`
-3. `bash <distro>/<distro>_installstuff.sh`
+3. `bash linux_distros/<distro>_installstuff`
 4. `bash setup.sh`
