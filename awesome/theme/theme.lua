@@ -27,10 +27,10 @@ theme.font      = "sans 9"
 
 -- {{{ Colors
 theme.fg_normal  = normal_front
-theme.fg_focus   = highlight_front
+theme.fg_focus   = normal_front
 theme.fg_urgent  = "#000000"
 theme.bg_normal  = normal_back
-theme.bg_focus   = highlight_back --"#1E2320"
+theme.bg_focus   = normal_back --"#1E2320"
 theme.bg_urgent  = "#FF0000"
 theme.bg_systray = normal_back
 -- }}}
@@ -38,7 +38,7 @@ theme.bg_systray = normal_back
 -- {{{ Borders
 theme.border_width  = 0
 theme.border_normal = normal_back
-theme.border_focus  = highlight_back --"#6F6F6F"
+theme.border_focus  = normal_back --"#6F6F6F"
 theme.border_marked = "FF0000"
 
 -- }}}
