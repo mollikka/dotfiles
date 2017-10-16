@@ -40,7 +40,7 @@ fi
 
 xscreensaver -nosplash &
 
-unclutter &
+unclutter -root &
 compton --config "$HOME/dotfiles/x/compton.conf" &
 #finnish keyboard
 setxkbmap fi
