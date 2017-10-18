@@ -5,7 +5,7 @@ local terminal_execute = function(cmd) return "urxvt -e " .. cmd end
 definitions.terminal = terminal
 definitions.terminal_execute = terminal_execute
 definitions.web = "chromium"
-definitions.email = "thunderbird"
+definitions.email = "chromium --app='http://mail.google.com'"
 definitions.internet = terminal_execute("sudo wifi-menu")
 definitions.shutdown = "shutdown now"
 definitions.restart = "shutdown now -r"
