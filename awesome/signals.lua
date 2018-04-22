@@ -1,8 +1,18 @@
 local awful = require("awful")
 local beautiful = require("beautiful")
 local wibox = require("wibox")
-
+local gears = require("gears")
 local shortcuts = require("shortcuts")
+
+local idletime = 5;
+local mouse_idle_timer = gears.timer {
+    timeout   = idletime,
+    autostart = false,
+    single_shot = true,
+    callback  = function()
+    -- Mouse out of the way
+    mouse.coords({ x=0, y=0 }) end
+}
 
 local signals = {}
 signals.create = function()
@@ -24,6 +34,26 @@ signals.create = function()
   -- }}}
 
   -- {{{ Signals
+  client.connect_signal("mouse::move", function (c, startup)
+    mouse_idle_timer.timeout = idletime
+    mouse_idle_timer:again()
+  end)
+  client.connect_signal("mouse::enter", function (c, startup)
+    mouse_idle_timer.timeout = idletime
+    mouse_idle_timer:again()
+  end)
+  client.connect_signal("mouse::leave", function (c, startup)
+    mouse_idle_timer.timeout = idletime
+    mouse_idle_timer:again()
+  end)
+  client.connect_signal("mouse::press", function (c, startup)
+    mouse_idle_timer.timeout = idletime
+    mouse_idle_timer:again()
+  end)
+  client.connect_signal("mouse::release", function (c, startup)
+    mouse_idle_timer.timeout = idletime
+    mouse_idle_timer:again()
+  end)
   -- Signal function to execute when a new client appears.
   client.connect_signal("manage", function (c, startup)
 
