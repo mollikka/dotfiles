@@ -126,9 +126,6 @@ shortcuts.globalkeys = awful.util.table.join(
     -- Screen brightness
     awful.key({ modkey            }, "F6", function () awful.util.spawn(defs.backlight) end),
 
-    -- Mouse out of the way
-    awful.key({ modkey            }, "F7", function () mouse.coords({ x=0, y=0 }) end),
-
     -- Sound mixer
     awful.key({ modkey,           }, "F8", function () awful.util.spawn(defs.soundsettings) end),
     awful.key({ modkey,           }, "s", function () awful.util.spawn(defs.soundsettings) end),
