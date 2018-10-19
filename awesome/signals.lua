@@ -4,15 +4,46 @@ local wibox = require("wibox")
 local gears = require("gears")
 local shortcuts = require("shortcuts")
 
+local notifications = require("notifications")
+
 local idletime = 5;
-local mouse_idle_timer = gears.timer {
-    timeout   = idletime,
-    autostart = false,
+local idlecounter = 0;
+local last_recorded_mouse_coords = {x=0, y=0};
+local idle_mouse_coords = {x=0, y=0};
+local idle_mode = false;
+local mouse_idle_poller = gears.timer {
+    timeout = 0.1,
+    autostart = true,
     single_shot = true,
-    callback  = function()
-    -- Mouse out of the way
-    mouse.coords({ x=0, y=0 }) end
+    callback = function()
+        local new_position = mouse.coords();
+        if (new_position.x == last_recorded_mouse_coords.x) and
+           (new_position.y == last_recorded_mouse_coords.y) then
+           -- mouse didn't move
+            if (idlecounter >= idletime) and not idle_mode then
+              -- go idle
+              idle_mouse_coords = mouse.coords();
+              idle_mode = true;
+              mouse.coords({ x=0, y=0});
+              last_recorded_mouse_coords = {x=0; y=0};
+            else
+              last_recorded_mouse_coords = new_position;
+            end
+            idlecounter = idlecounter+1;
+        else
+            -- mouse is moving
+            idlecounter = 0;
+            if idle_mode then
+              -- wake up
+              mouse.coords(idle_mouse_coords);
+              idle_mode = false;
+            end
+            last_recorded_mouse_coords = new_position;
+        end
+        mouse_idle_poller:again();
+      end
 }
+idletime = 5/mouse_idle_poller.timeout;
 
 local signals = {}
 signals.create = function()
@@ -34,26 +65,6 @@ signals.create = function()
   -- }}}
 
   -- {{{ Signals
-  client.connect_signal("mouse::move", function (c, startup)
-    mouse_idle_timer.timeout = idletime
-    mouse_idle_timer:again()
-  end)
-  client.connect_signal("mouse::enter", function (c, startup)
-    mouse_idle_timer.timeout = idletime
-    mouse_idle_timer:again()
-  end)
-  client.connect_signal("mouse::leave", function (c, startup)
-    mouse_idle_timer.timeout = idletime
-    mouse_idle_timer:again()
-  end)
-  client.connect_signal("mouse::press", function (c, startup)
-    mouse_idle_timer.timeout = idletime
-    mouse_idle_timer:again()
-  end)
-  client.connect_signal("mouse::release", function (c, startup)
-    mouse_idle_timer.timeout = idletime
-    mouse_idle_timer:again()
-  end)
   -- Signal function to execute when a new client appears.
   client.connect_signal("manage", function (c, startup)
 
