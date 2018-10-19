@@ -6,7 +6,7 @@ definitions.terminal = terminal
 definitions.terminal_execute = terminal_execute
 definitions.web = "chromium"
 definitions.email = "chromium --app='http://mail.google.com'"
-definitions.internet = terminal_execute("sudo wifi-menu")
+definitions.internet = terminal_execute("wicd-curses")
 definitions.shutdown = "shutdown now"
 definitions.restart = "shutdown now -r"
 definitions.soundsettings = terminal_execute("alsamixer")
