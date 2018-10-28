@@ -11,6 +11,17 @@ local idlecounter = 0;
 local last_recorded_mouse_coords = {x=0, y=0};
 local idle_mouse_coords = {x=0, y=0};
 local idle_mode = false;
+
+local mouse_wakeup = function()
+  -- mouse is moving
+  idlecounter = 0;
+  if idle_mode then
+    -- wake up
+    mouse.coords(idle_mouse_coords);
+    idle_mode = false;
+  end
+end
+
 local mouse_idle_poller = gears.timer {
     timeout = 0.1,
     autostart = true,
@@ -33,19 +44,32 @@ local mouse_idle_poller = gears.timer {
             end
             idlecounter = idlecounter+1;
         else
-            -- mouse is moving
-            idlecounter = 0;
-            if idle_mode then
-              -- wake up
-              mouse.coords(idle_mouse_coords);
-              idle_mode = false;
-            end
+            mouse_wakeup();
             last_recorded_mouse_coords = new_position;
         end
         mouse_idle_poller:again();
       end
 }
 idletime = 5/mouse_idle_poller.timeout;
+
+-- {{{ Mouse bindings
+clientbuttons = gears.table.join(
+    awful.button({ }, 1, function()
+      mouse_wakeup();
+    end),
+    awful.button({ }, 2, function()
+      mouse_wakeup();
+    end),
+    awful.button({ }, 3, function()
+      mouse_wakeup();
+    end),
+    awful.button({ }, 4, function()
+      mouse_wakeup();
+    end),
+    awful.button({ }, 5, function()
+      mouse_wakeup();
+    end)
+);
 
 local signals = {}
 signals.create = function()
