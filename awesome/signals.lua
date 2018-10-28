@@ -24,8 +24,10 @@ local mouse_idle_poller = gears.timer {
               -- go idle
               idle_mouse_coords = mouse.coords();
               idle_mode = true;
-              mouse.coords({ x=0, y=0});
-              last_recorded_mouse_coords = {x=0; y=0};
+              mouse.coords({x = mouse.screen.geometry.width-1,
+                            y = mouse.screen.geometry.height-1});
+              last_recorded_mouse_coords = {x = mouse.screen.geometry.width-1,
+                                            y = mouse.screen.geometry.height-1};
             else
               last_recorded_mouse_coords = new_position;
             end
