@@ -86,6 +86,7 @@ signals.create = function()
                        size_hints_honor = false,
                        maximized_horizontal = false,
                        maximized_vertical = false,
+                       maximized = false,
                        buttons = clientbuttons } },
   }
   -- }}}
