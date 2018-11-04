@@ -1,6 +1,7 @@
 - `Meta-R` Run command
 
 - `Meta-B` Open browser
+- `Meta-D` Open chat
 - `Meta-M` Open email client
 - `Meta-S` `Meta-F8` Open audio mixer
 - `Meta-T` Open terminal

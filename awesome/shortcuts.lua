@@ -98,6 +98,9 @@ shortcuts.globalkeys = awful.util.table.join(
     -- E-mail
     awful.key({ modkey,           }, "m", function () awful.util.spawn(defs.email) end),
 
+    -- Chat
+    awful.key({ modkey,           }, "d", function () awful.util.spawn(defs.chat) end),
+
     -- Prompt
     awful.key({ modkey },            "r",     topbar.use_prompt),
 
