@@ -67,6 +67,10 @@ set smartindent
 set smarttab	
 set softtabstop=2	
 
+"modeline
+set modeline
+set modelines=5
+
 "folding
 "http://www.gregsexton.org/2011/03/improving-the-text-displayed-in-a-fold/
 function CustomFoldText()
