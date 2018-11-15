@@ -29,7 +29,7 @@ ln -s $HOME/dotfiles/gimp $HOME/.gimp-2.8
 vim +PluginInstall +qall -u $HOME/dotfiles/vim/vimplugins
 
 #load zsh plugins
-git clone git://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.zshplugins/zsh-syntax-highlighting
+git clone git@github.com:zsh-users/zsh-syntax-highlighting.git $HOME/.zshplugins/zsh-syntax-highlighting
 
 #load awesome plugins
 git clone http://git.sysphere.org/vicious $HOME/.awesomeplugins/vicious
