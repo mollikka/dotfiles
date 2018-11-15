@@ -101,7 +101,16 @@ findword () {
 
 # execute python
 function p() {
-  python -c "print($1)"
+  A=$1
+  B=$2
+  if [ "$A" != "" ]; then
+    A="print($A)"
+  fi
+  python -c "
+from math import *
+from random import *
+$B
+$A"
 }
 
 # display files in a tree view
