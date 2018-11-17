@@ -1,5 +1,5 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.37 for lauri on Mon Jul 24 15:14:00 2017.
+# Written by xscreensaver-demo 5.40 for lauri on Sat Nov 17 11:42:52 2018.
 # https://www.jwz.org/xscreensaver/
 
 timeout:	0:10:00
@@ -281,6 +281,14 @@ programs:								      \
 - GL: 				hexstrut -root				    \n\
 - GL: 				splodesic -root -depth 5		    \n\
 - GL: 				vigilance -root				    \n\
+- GL: 				esper -root				    \n\
+  GL: 				crumbler -root -density 0.2 -fracture 20    \n\
+-				filmleader -root			    \n\
+-				glitchpeg -root				    \n\
+- GL: 				maze3d -root				    \n\
+- GL: 				peepers -root				    \n\
+- GL: 				razzledazzle -root			    \n\
+-				vfeedback -root				    \n\
 
 
 pointerPollTime:    0:00:05
