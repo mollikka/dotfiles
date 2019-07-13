@@ -7,7 +7,7 @@ definitions.terminal_execute = terminal_execute
 definitions.web = "chromium"
 definitions.email = "chromium --app='http://mail.google.com'"
 definitions.chat = "chromium --app='https://discordapp.com/channels/@me'"
-definitions.internet = terminal_execute("wicd-curses")
+definitions.internet = terminal_execute("nmtui")
 definitions.shutdown = "shutdown now"
 definitions.restart = "shutdown now -r"
 definitions.soundsettings = terminal_execute("alsamixer")
