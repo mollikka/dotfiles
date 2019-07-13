@@ -19,18 +19,25 @@ ln -s $HOME/dotfiles/zsh/zshenv $HOME/.zshenv
 ln -s $HOME/dotfiles/vim/vimrc $HOME/.vimrc
 ln -s $HOME/dotfiles/git/gitconfig $HOME/.gitconfig
 ln -s $HOME/dotfiles/x/xinitrc $HOME/.xinitrc
-ln -s $HOME/dotfiles/awesome $HOME/.config/awesome
-mkdir -p $HOME/.config/OpenSCAD/
-ln -s $HOME/dotfiles/openscad/openscad.conf $HOME/.config/OpenSCAD/OpenSCAD.conf
-ln -s $HOME/dotfiles/x/xscreensaver $HOME/.xscreensaver
-ln -s $HOME/dotfiles/gimp $HOME/.gimp-2.8
 
 #load vim plugins
 vim +PluginInstall +qall -u $HOME/dotfiles/vim/vimplugins
 
 #load zsh plugins
-git clone git@github.com:zsh-users/zsh-syntax-highlighting.git $HOME/.zshplugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.zshplugins/zsh-syntax-highlighting
 
-#load awesome plugins
-git clone http://git.sysphere.org/vicious $HOME/.awesomeplugins/vicious
-git clone https://github.com/copycat-killer/vain-again.git $HOME/.awesomeplugins/vain
+#load gui stuff
+if [ "${1:-nope}" == "gui" ];
+then
+  #link dotfiles to home directory
+  ln -s $HOME/dotfiles/awesome $HOME/.config/awesome
+  mkdir -p $HOME/.config/OpenSCAD/
+  ln -s $HOME/dotfiles/openscad/openscad.conf $HOME/.config/OpenSCAD/OpenSCAD.conf
+  ln -s $HOME/dotfiles/x/xscreensaver $HOME/.xscreensaver
+  ln -s $HOME/dotfiles/gimp $HOME/.gimp-2.8
+
+  #load awesome plugins
+  git clone http://git.sysphere.org/vicious $HOME/.awesomeplugins/vicious
+  git clone https://github.com/copycat-killer/vain-again.git $HOME/.awesomeplugins/vain
+fi
+
