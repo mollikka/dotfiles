@@ -74,6 +74,7 @@ theme.taglist_squares_unsel = "~/dotfiles/awesome/theme/taglist/squarez.png"
 theme.awesome_icon           = "~/dotfiles/awesome/theme/awesome-icon.png"
 theme.menu_submenu_icon      = "~/dotfiles/awesome/theme/submenu.png"
 theme.statbar_height = barheight
+theme.notification_icon_size = 32
 -- }}}
 
 -- }}}
