@@ -128,10 +128,6 @@ let g:SimpylFold_fold_docstring = 0
 
 "bindings
 
-nmap <silent><Tab> :bnext<CR>:redraw<CR>:ls<CR>
-
-nmap U <c-r>
-
 """""n means next:
 "https://gist.github.com/AndrewRadev/1171559
 
