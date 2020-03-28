@@ -1,4 +1,0 @@
-#!/bin/sh
-
-sudo pacman -S zsh git vim awesome unclutter xscreensaver imagemagick chromium rxvt-unicode alsa-utils urxvt-perls compton
-
