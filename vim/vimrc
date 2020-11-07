@@ -5,7 +5,7 @@ filetype plugin indent on
 "nerdtree
 nmap <c-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif "close if only nerdtree is open
-let g:NERDTreeIndicatorMapCustom = {
+let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ "Modified"  : "M",
     \ "Staged"    : "+",
     \ "Untracked" : "?",
