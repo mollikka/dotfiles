@@ -50,7 +50,6 @@ if [ -x "$(command -v awesome)" ] && [ -x "$(command -v git)" ]; then
   echo "Loading Awesome plugins"
   #load awesome plugins
   git clone http://git.sysphere.org/vicious $HOME/.awesomeplugins/vicious
-  git clone https://github.com/copycat-killer/vain-again.git $HOME/.awesomeplugins/vain
 else
   echo "Skipping Awesome plugins"
 fi

@@ -1,5 +1,4 @@
 local awful = require("awful")
-local vain = require("vain")
 
 local definitions = require("definitions")
 
