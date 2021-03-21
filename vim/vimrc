@@ -96,14 +96,11 @@ endfunction
 "theme
 syntax enable
 set cursorline
-let g:solarized_termtrans = 1
 set background=dark
-colorscheme solarized
 set list
 set listchars=tab:>.,trail:.,extends:>,precedes:<
 
 "parentheses coloring
-
 let g:rbpt_colorpairs = [
     \ ['gray',        'RoyalBlue3'],
     \ ['darkmagenta', 'DarkOrchid3'],

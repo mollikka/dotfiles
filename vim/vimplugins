@@ -10,11 +10,12 @@ Plugin 'tomtom/tcomment_vim'
 Plugin 'sirtaj/vim-openscad'
 Plugin 'JuliaLang/julia-vim'
 Plugin 'pangloss/vim-javascript'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'peitalin/vim-jsx-typescript'
 Plugin 'elzr/vim-json'
 Plugin 'tmhedberg/SimpylFold' "python folding
 
-Plugin 'altercation/vim-colors-solarized' 
-Plugin 'kien/rainbow_parentheses.vim' 
+Plugin 'kien/rainbow_parentheses.vim'
 
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
