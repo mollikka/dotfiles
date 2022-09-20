@@ -23,12 +23,12 @@ alias ls="ls -CF --color=auto"
 set_prompt()
 {
     if [ $COLUMNS -gt 60 ]; then
-	PROMPT="%{%F{blue}%}%n@%m%{%F{white}%}%c%{%F{blue}%}%#%{%f%}"
+        PROMPT="%{%F{cyan}%}%n@%m%{%F{white}%}%c%{%F{cyan}%}%#%{%f%}"
         RPROMPT=''
     else
         #compact version if in a small window
-	PROMPT="%{%F{blue}%}$%{%f%}"
-    	RPROMPT=''
+        PROMPT="%{%F{cyan}%}$%{%f%}"
+        RPROMPT=''
     fi
 }
 set_prompt
@@ -67,6 +67,7 @@ fi
 ##SPELLING CORRECTION
 setopt CORRECT
 
+##SWITCH USER ALWAYS CREATES A NEW SESSION
 alias su="su -p"
 
 ## CUSTOM FUNCTIONS
@@ -95,8 +96,6 @@ $A"
 # http://www.unix.com/solaris/54552-what-command-can-display-files-tree.html
 alias tree="find . -maxdepth 2 -not -path '*/\.*' -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 
-alias ultron="chromium"
-
 ## PLUGINS
 
 #syntax highlight plugin
@@ -104,8 +103,6 @@ source ~/.zshplugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zshplugins/zsh-history-substring-search.git/zsh-history-substring-search.zsh
 source ~/.zshplugins/zsh-autosuggestions.git/zsh-autosuggestions.zsh
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main)
-
-
 
 #LOCAL ZSH SETTINGS
 LOCALS=~/dotfiles/zsh/localrc
