@@ -86,7 +86,7 @@ function p() {
   if [ "$A" != "" ]; then
     A="print($A)"
   fi
-  python -c "
+  python3 -c "
 from math import *
 from random import *
 $B

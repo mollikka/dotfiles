@@ -39,7 +39,7 @@ set fileencoding=utf-8  " default encoding written to file.
 set hidden
 set errorbells	
 set visualbell	
-set clipboard=unnamedplus
+set clipboard=unnamed
 set ruler
 set undolevels=1000	
 set backspace=indent,eol,start	
