@@ -60,6 +60,7 @@ if [ -f $ZKBD ]; then
     [[ -n ${key[Left]} ]] && bindkey "${key[Left]}" backward-char
     [[ -n ${key[Down]} ]] && bindkey "${key[Down]}" down-line-or-search
     [[ -n ${key[Right]} ]] && bindkey "${key[Right]}" forward-char
+    bindkey -v
 else
     echo "No ZKBD file. Keybindings might be weird. Run 'autoload zkbd; zkbd' to generate."
 fi
