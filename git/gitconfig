@@ -13,5 +13,6 @@
         co = checkout
         undo = reset --soft HEAD~1
         unst = reset HEAD
+        rest = restore :/
         scoreboard = shortlog -sn
         nuke = stash save --quiet --keep-index --include-untracked; stash drop
