@@ -17,6 +17,9 @@
         scoreboard = shortlog -sn
         nuke = stash save --quiet --keep-index --include-untracked; stash drop
 
-        b = "!f() { git branch --format '%(refname:short)%09%(committerdate:relative)%09%(subject)' | column -t -s $'\t' | grep -ve '^old/' | grep -ve '^unused/';  }; f"
+        b = "!f() { git branch --color --sort=-committerdate --format ' %(HEAD)%(if)%(HEAD)%(then)%(color:green)%(else)%(color:white)%(end) %(refname:short)%(color:reset)%09%(committerdate:relative)%09%(subject)' | column -t -s $'\t' | grep -ve ' old/' | grep -ve ' unused/';  }; f"
         old = "!f() { B=${1}; git branch -M $B old/$B;  }; f"
         unused = "!f() { B=${1}; git branch -M $B unused/$B;  }; f"
+
+        bs = "!f() { git b; echo ''; git s;}; f"
+        sb = bs
