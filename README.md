@@ -9,5 +9,5 @@ Notice the original links in many of the config files.
 1. `cd`
 1. `git clone git@github.com:mollikka/dotfiles.git`
 2. `cd dotfiles`
-3. `bash linux_distros/<distro>_installstuff`
+3. `bash installstuff.sh`
 4. `bash setup.sh`
