@@ -41,6 +41,7 @@ if grep -qE "/zsh$" /etc/shells && [ -x "$(command -v git)" ]; then
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.zshplugins/zsh-syntax-highlighting
   git clone https://github.com/zsh-users/zsh-history-substring-search.git $HOME/.zshplugins/zsh-history-substring-search.git
   git clone https://github.com/zsh-users/zsh-autosuggestions.git $HOME/.zshplugins/zsh-autosuggestions.git
+  git clone https://github.com/jeffreytse/zsh-vi-mode.git $HOME/.zshplugins/zsh-vi-mode.git
 else
   echo "Skipping Zsh plugins"
 fi
