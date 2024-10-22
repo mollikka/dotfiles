@@ -16,7 +16,6 @@
         rest = restore :/
         del = branch -D
         new = co -B
-        scoreboard = shortlog -sn
         nuke = stash save --quiet --keep-index --include-untracked; stash drop
 
         b = "!f() { git branch --color --sort=-committerdate --format ' %(HEAD)%(if)%(HEAD)%(then)%(color:green)%(else)%(color:white)%(end) %(refname:short)%(color:reset)%09%(color:cyan)%(committerdate:relative)%09%(subject)%(color:reset)' | column -t -s $'\t' | grep -ve ' old/' | grep -ve ' unused/';  }; f"
