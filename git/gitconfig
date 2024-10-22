@@ -28,5 +28,6 @@
         bs = "!f() { git b; echo ''; git s;}; f"
         sb = bs
         reb = rebase -i origin/HEAD
+        amend = commit --amend --no-edit
 [init]
         defaultBranch = trunk
