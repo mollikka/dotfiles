@@ -31,7 +31,7 @@ layouts.browsingtriple.arrange = function(p)
   local left_pos = work_x
   local mid_pos = work_x + work_width/3
   local right_pos = work_x + work_width/3*2
-  local hide_pos = work_x + work_width
+  local hide_pos = work_x + work_width/3*2
 
   local focus_id = get_focus_id(clients)
 
@@ -42,22 +42,27 @@ layouts.browsingtriple.arrange = function(p)
     g.width = work_width/3 - c.border_width*2
     g.height = work_height - c.border_width*2
 
-    if ((i-focus_id)%#clients == #clients-1) then
+    if (i == 1) then
       g.x = left_pos
-    else if ((i-focus_id)%#clients == 0) then
+    else if (i == 2) then
       g.x = mid_pos
-    else if ((i-focus_id)%#clients == 1) then
-      g.x = right_pos
     else
-      g.x = hide_pos
-    end end end
+      g.x = right_pos
+    end end
+
     g.y = work_y
     c:geometry(g)
   end
+  clients[3]:raise()
+  clients[2]:raise()
+  clients[1]:raise()
+  clients[focus_id]:raise()
 end
 --- dual layout draws first two clients side by side splitscreen and ignores the rest
 layouts.duallayout = {}
 layouts.duallayout.name = "duallayout"
+layouts.duallayout.getnmaster = function() return 2 end
+layouts.duallayout.getncol = function() return 2 end
 layouts.duallayout.arrange = function(p)
 
   local work_x = p.workarea.x
@@ -68,7 +73,7 @@ layouts.duallayout.arrange = function(p)
 
   local left_pos = work_x
   local right_pos = work_x + work_width/2
-  local hide_pos = work_x + work_width
+  local hide_pos = -100000 --work_x + work_width/2
 
   local focus_id = get_focus_id(clients)
 
@@ -83,29 +88,29 @@ layouts.duallayout.arrange = function(p)
 
     if (i == 1) then
       g.x = left_pos
-    else if (i == 2) and (focus_id < 3) then
-      g.x = right_pos
-    else if (in_focus) then
-      g.x = right_pos
     else
-      g.x = hide_pos
-    end end end
+      g.x = right_pos
+    end
     g.y = work_y
 
     c:geometry(g)
   end
+
+  clients[2]:raise()
+  clients[1]:raise()
+  clients[focus_id]:raise()
 end
 
--- {{{ Layouts
-if definitions.laptopmode then
-layouts.layouts = {layouts.duallayout,
-             awful.layout.suit.max}
-else
-layouts.layouts = {layouts.duallayout,
-              layouts.browsingtriple,
-             awful.layout.suit.max}
+layouts.create = function()
+  awful.layout.layouts = {
+    layouts.duallayout,
+    layouts.browsingtriple,
+    awful.layout.suit.fair,
+    awful.layout.suit.max}
+
 end
--- }}}
+
+layouts.default = layouts.duallayout
 
 return layouts
 

@@ -4,6 +4,7 @@ local naughty = require("naughty")
 local defs = require("definitions")
 local layouts = require("layouts")
 local tags = require("tags")
+local screens = require("screens")
 local topbar = require("topbar")
 local notifs = require("notifications")
 
@@ -57,15 +58,26 @@ shortcuts.globalkeys = awful.util.table.join(
     awful.key({ modkey,  "Shift"  }, "h",      function() awful.client.swap.byidx(-1)  if client.focus then client.focus:raise() end end     ),
     awful.key({ modkey,  "Shift"  }, "Right",  function() awful.client.swap.byidx(1)   if client.focus then client.focus:raise() end end     ),
     awful.key({ modkey,  "Shift"  }, "l",      function() awful.client.swap.byidx(1)   if client.focus then client.focus:raise() end end     ),
-    awful.key({ modkey,           }, "Up",     awful.tag.viewprev),
-    awful.key({ modkey,           }, "k",      awful.tag.viewprev),
-    awful.key({ modkey, "Shift"   }, "Up",     tags.moveup),
-    awful.key({ modkey, "Shift"   }, "k",      tags.moveup),
-    awful.key({ modkey,           }, "Down",   awful.tag.viewnext),
-    awful.key({ modkey,           }, "j",      awful.tag.viewnext),
-    awful.key({ modkey, "Shift"   }, "Down",   tags.movedown),
-    awful.key({ modkey, "Shift"   }, "j",      tags.movedown),
 
+    awful.key({ modkey,           }, "Up",     function() awful.screen.focus_relative(1)   if client.focus then client.focus:raise() end end     ),
+    awful.key({ modkey,           }, "k",     function() awful.screen.focus_relative(1)   if client.focus then client.focus:raise() end end     ),
+    awful.key({ modkey,           }, "Down",     function() awful.screen.focus_relative(-1)   if client.focus then client.focus:raise() end end     ),
+    awful.key({ modkey,           }, "j",     function() awful.screen.focus_relative(-1)   if client.focus then client.focus:raise() end end     ),
+
+    awful.key({ modkey, "Shift"   }, "Up",     screens.moveup),
+    awful.key({ modkey, "Shift"   }, "k",      screens.moveup),
+    awful.key({ modkey, "Shift"   }, "Down",   screens.movedown),
+    awful.key({ modkey, "Shift"   }, "j",      screens.movedown),
+
+
+    awful.key({ modkey, "Ctrl" }, "Up", awful.tag.viewnext),
+    awful.key({ modkey, "Ctrl" }, "k", awful.tag.viewnext),
+    awful.key({ modkey, "Ctrl" }, "Down", awful.tag.viewprev),
+    awful.key({ modkey, "Ctrl" }, "j", awful.tag.viewprev),
+    awful.key({ modkey, "Ctrl","Shift" }, "Up", tags.moveup),
+    awful.key({ modkey, "Ctrl","Shift" }, "k", tags.moveup),
+    awful.key({ modkey, "Ctrl","Shift" }, "Down", tags.movedown),
+    awful.key({ modkey, "Ctrl","Shift" }, "j", tags.movedown),
 
     awful.key({ modkey,           }, "1", function () select_nth_client(1) end),
     awful.key({ modkey,           }, "2", function () select_nth_client(2) end),
@@ -153,7 +165,8 @@ shortcuts.globalkeys = awful.util.table.join(
 )
 
 shortcuts.clientkeys = awful.util.table.join(
-    awful.key({ modkey,           }, "F11",    function (c) awful.layout.inc(layouts.layouts,  1) end),
+    awful.key({ modkey,           }, "F11",
+        function (c) awful.layout.inc(1, client.focus.screen) end),
     awful.key({ modkey, "Shift"   }, "F11",    function (c) see_through_client(c) end),
     awful.key({ modkey,           }, "F4",     function (c) c:kill()     end)
 )

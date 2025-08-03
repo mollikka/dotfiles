@@ -5,7 +5,6 @@ package.path = package.path .. ';' .. os.getenv("HOME") .. '/.awesomeplugins/?/i
 -- Standard awesome library
 local gears = require("gears")
 local awful = require("awful")
-awful.rules = require("awful.rules")
 require("awful.autofocus")
 -- Widget and layout library
 local wibox = require("wibox")
@@ -71,5 +70,7 @@ root.keys(shortcuts.globalkeys)
 -- {{{ Activate modules
 topbar.create()
 signals.create()
+layouts.create()
 tags.create()
 -- }}}
+

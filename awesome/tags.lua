@@ -4,7 +4,7 @@ local layouts = require("layouts")
 local tags = {}
 tags.create = function()
   for s = 1, screen.count() do
-    tags[s] = awful.tag({"A","B","C"}, s, layouts.layouts[1])
+    tags[s] = awful.tag({"A","B","C"}, s, layouts.default)
   end
 end
 

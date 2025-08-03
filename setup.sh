@@ -18,9 +18,6 @@ ln -s $HOME/dotfiles/git/gitconfig $HOME/.gitconfig
 ln -s $HOME/dotfiles/x/xinitrc $HOME/.xinitrc
 #link gui preference files
 ln -s $HOME/dotfiles/awesome $HOME/.config/awesome
-mkdir -p $HOME/.config/OpenSCAD/
-ln -s $HOME/dotfiles/openscad/openscad.conf $HOME/.config/OpenSCAD/OpenSCAD.conf
-ln -s $HOME/dotfiles/x/xscreensaver $HOME/.xscreensaver
 ln -s $HOME/dotfiles/gimp $HOME/.gimp-2.8
 
 #load vim plugins

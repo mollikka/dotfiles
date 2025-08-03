@@ -18,14 +18,14 @@ highlight_back = "#dddddd";--"#FEEACB"--"#CC9393"
 -- {{{ Main
 theme = {}
 
-theme.wallpaper = "~/dotfiles/awesome/theme/bg.jpg"
+-- theme.wallpaper = "~/dotfiles/awesome/theme/bg.jpg"
 
 theme.wallpaper_bg_color = "#181b28"
 
 -- }}}
 
 -- {{{ Styles
-theme.font      = "sans 9"
+theme.font      = "JetBrains Mono 9"
 
 -- {{{ Colors
 theme.fg_normal  = normal_front

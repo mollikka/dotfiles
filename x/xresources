@@ -16,7 +16,7 @@
 *.color4: #6494aa
 
 urxvt*scrollBar: false
-urxvt*font: xft:DejaVu Sans Mono:pixelsize=16
+urxvt*font: xft:JetBrains Mono:pixelsize=14
 
 !! yankable urls
 URxvt.perl-ext: default,url-select
