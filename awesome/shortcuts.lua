@@ -59,10 +59,10 @@ shortcuts.globalkeys = awful.util.table.join(
     awful.key({ modkey,  "Shift"  }, "Right",  function() awful.client.swap.byidx(1)   if client.focus then client.focus:raise() end end     ),
     awful.key({ modkey,  "Shift"  }, "l",      function() awful.client.swap.byidx(1)   if client.focus then client.focus:raise() end end     ),
 
-    awful.key({ modkey,           }, "Up",     function() awful.screen.focus_relative(1)   if client.focus then client.focus:raise() end end     ),
-    awful.key({ modkey,           }, "k",     function() awful.screen.focus_relative(1)   if client.focus then client.focus:raise() end end     ),
-    awful.key({ modkey,           }, "Down",     function() awful.screen.focus_relative(-1)   if client.focus then client.focus:raise() end end     ),
-    awful.key({ modkey,           }, "j",     function() awful.screen.focus_relative(-1)   if client.focus then client.focus:raise() end end     ),
+    awful.key({ modkey,           }, "Up",     screens.focusup     ),
+    awful.key({ modkey,           }, "k",      screens.focusup        ),
+    awful.key({ modkey,           }, "Down",  screens.focusdown      ),
+    awful.key({ modkey,           }, "j",     screens.focusdown     ),
 
     awful.key({ modkey, "Shift"   }, "Up",     screens.moveup),
     awful.key({ modkey, "Shift"   }, "k",      screens.moveup),

@@ -4,7 +4,7 @@ local wibox = require("wibox")
 local gears = require("gears")
 local shortcuts = require("shortcuts")
 local topbar = require("topbar")
-
+local screens = require("screens")
 local notifications = require("notifications")
 
 local idletime = 5;
@@ -100,7 +100,8 @@ signals.create = function()
 
   end)
 
-  client.connect_signal("focus", function(c) 
+  client.connect_signal("focus", function(c)
+    topbar.update_colors()
     c.border_color = beautiful.border_focus c.opacity = 1
   end)
   client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal c.opacity = 1 end)
