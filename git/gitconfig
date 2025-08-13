@@ -1,5 +1,5 @@
 [user]
-	email = lauri.tervonen@kolumbus.fi
+	email = lauri.tervonen@iki.fi
 	name = Lauri Tervonen
 [push]
 	default = current
@@ -20,6 +20,9 @@
         b = "!f() { git branch --color --sort=-committerdate --format ' %(HEAD)%(if)%(HEAD)%(then)%(color:green)%(else)%(color:white)%(end) %(refname:short)%(color:reset)%09%(committerdate:relative)%09%(subject)' | column -t -s $'\t' | grep -ve ' old/' | grep -ve ' unused/';  }; f"
         old = "!f() { B=${1}; git branch -M $B old/$B;  }; f"
         unused = "!f() { B=${1}; git branch -M $B unused/$B;  }; f"
+
+        amend = commit --amend -m
+        fixup = commit --amend --no-edit
 
         bs = "!f() { git b; echo ''; git s;}; f"
         sb = bs
