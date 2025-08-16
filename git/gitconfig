@@ -20,9 +20,10 @@
         new = co -B
         nuke = stash save --quiet --keep-index --include-untracked; stash drop
 
-        b = "!f() { git branch --color --sort=-committerdate --format ' %(HEAD)%(if)%(HEAD)%(then)%(color:green)%(else)%(color:white)%(end) %(refname:short)%(color:reset)%09%(color:cyan)%(committerdate:relative)%09%(subject)%(color:reset)' | column -t -s $'\t' | grep -ve ' old/' | grep -ve ' unused/';  }; f"
+        b = "!f() { git branch --color --sort=-committerdate --format ' %(HEAD)%(if)%(HEAD)%(then)%(color:green)%(else)%(color:white)%(end) %(refname:short)%(color:reset)%09%(color:cyan)%(committerdate:relative)%(color:reset)' | column -t -s $'\t' | grep -ve ' old/' | grep -ve ' unused/';  }; f"
         old = "!f() { B=${1}; git branch -M $B old/$B;  }; f"
         unused = "!f() { B=${1}; git branch -M $B unused/$B;  }; f"
+        rename = "!f() { B=${1}; C=${2}; git branch -M $B $C;  }; f"
 
         amend = commit --amend -m
         fixup = commit --amend --no-edit
@@ -30,6 +31,7 @@
         bs = "!f() { git b; echo ''; git s;}; f"
         sb = bs
         reb = rebase -i origin/HEAD
-        amend = commit --amend --no-edit
+        amend = commit --amend -m
+        fixup = commit --amend --no-edit
 [init]
         defaultBranch = trunk
