@@ -20,10 +20,17 @@ urxvt*font: xft:JetBrains Mono:pixelsize=14
 
 !! yankable urls
 URxvt.perl-ext: default,url-select
-URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.keysym.C-u: perl:url-select:select_next
 URxvt.url-select.launcher: /usr/bin/xdg-open
 URxvt.url-select.underline: true
 
 !! scrolling hotkeys
 URxvt.keysym.Shift-Up: command:\033]720;1\007
 URxvt.keysym.Shift-Down: command:\033]721;1\007
+
+!! clipboard
+URxvt.perl-ext-common: default,clipboard
+URxvt.keysym.A-c: perl:clipboard:copy
+URxvt.keysym.C-v: perl:clipboard:paste
+
+Xcursor.theme: Adwaita
