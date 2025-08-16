@@ -1,0 +1,27 @@
+#!/bin/sh
+
+bspc config border_width         2
+bspc config window_gap           8
+bspc config split_ratio          0.5
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+bspc config focus_follows_pointer false
+
+xsetroot -cursor_name left_ptr &
+xsetroot -solid "#002200"
+
+# left side monitor
+bspc rule -a firefox monitor=HDMI-0
+bspc rule -a vlc monitor=HDMI-0
+
+# main monitor
+bspc rule -a Blender monitor=DP-0
+bspc rule -a Gimp monitor=DP-0
+bspc rule -a Inkscape monitor=DP-0
+
+# right side monitor
+bspc rule -a Spotify monitor=DP-5
+bspc rule -a steam monitor=DP-5
+bspc rule -a discord monitor=DP-5
+
+bspc rule -a pavucontrol state=floating

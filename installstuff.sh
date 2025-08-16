@@ -13,7 +13,7 @@ if [ -x "$(command -v pacman)" ]; then
   echo "Using pacman to install stuff"
   sudo pacman -S zsh git vim openssh
   if [ $1 == "visual" ]; then
-    sudo pacman -S xscreensaver imagemagick chromium rxvt-unicode alsa-utils urxvt-perls compton
+    sudo pacman -S bspwm sxhkd xscreensaver imagemagick chromium rxvt-unicode alsa-utils urxvt-perls compton
   fi
 elif [ -x "$(command -v apt-get)" ]; then
   echo "Using apt to install stuff"

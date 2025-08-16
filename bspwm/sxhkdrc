@@ -1,0 +1,42 @@
+# Move floating clients with the mouse
+bspc config pointer_modifier super
+bspc config pointer_action1 move
+bspc config pointer_action2 resize_corner
+
+# Program Launchers
+super + t
+    urxvt
+
+# Close a client
+super + q
+  bspc node -c
+
+# Float client
+super + F10
+  $HOME/dotfiles/bspwm/bspc-float.sh
+
+# Fullscreen client
+super + F11
+  $HOME/dotfiles/bspwm/bspc-fullscreen.sh
+
+# Focus client
+super + {Left,Right,Up,Down}
+  $HOME/dotfiles/bspwm/bspc-focus.sh {Left,Right,Up,Down}
+
+super + {h,l,k,j}
+  $HOME/dotfiles/bspwm/bspc-focus.sh {Left,Right,Up,Down}
+
+# Move client
+super + shift + {Left,Right,Up,Down}
+  $HOME/dotfiles/bspwm/bspc-move.sh {Left,Right,Up,Down}
+
+super + shift + {h,l,k,j}
+  $HOME/dotfiles/bspwm/bspc-move.sh {Left,Right,Up,Down}
+
+# Resize client
+super + alt + {Left,Right,Up,Down}
+  $HOME/dotfiles/bspwm/bspc-resize.sh {Left,Right,Up,Down}
+
+super + alt + {h,l,k,j}
+  $HOME/dotfiles/bspwm/bspc-resize.sh {Left,Right,Up,Down}
+
