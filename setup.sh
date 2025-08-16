@@ -17,7 +17,6 @@ ln -s $HOME/dotfiles/vim/vimrc $HOME/.vimrc
 ln -s $HOME/dotfiles/git/gitconfig $HOME/.gitconfig
 ln -s $HOME/dotfiles/x/xinitrc $HOME/.xinitrc
 #link gui preference files
-ln -s $HOME/dotfiles/awesome $HOME/.config/awesome
 ln -s $HOME/dotfiles/gimp $HOME/.gimp-2.8
 
 #load vim plugins
@@ -41,13 +40,4 @@ if grep -qE "/zsh$" /etc/shells && [ -x "$(command -v git)" ]; then
   git clone https://github.com/jeffreytse/zsh-vi-mode.git $HOME/.zshplugins/zsh-vi-mode.git
 else
   echo "Skipping Zsh plugins"
-fi
-
-#load awesome plugins
-if [ -x "$(command -v awesome)" ] && [ -x "$(command -v git)" ]; then
-  echo "Loading Awesome plugins"
-  #load awesome plugins
-  git clone http://github.com/vicious-widgets/vicious $HOME/.awesomeplugins/vicious
-else
-  echo "Skipping Awesome plugins"
 fi
