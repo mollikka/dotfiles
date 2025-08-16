@@ -16,8 +16,6 @@ mv $HOME/.vimrc $HOME/old_dotfiles/
 mv $HOME/.gitconfig $HOME/old_dotfiles/
 mv $HOME/.xinitrc $HOME/old_dotfiles/
 mv $HOME/.config/awesome $HOME/old_dotfiles/
-mv $HOME/.config/OpenSCAD/OpenSCAD.conf $HOME/old_dotfiles/
 mv $HOME/.xscreensaver $HOME/old_dotfiles/
-mv $HOME/.gimp-2.8 $HOME/old_dotfiles/
 mv $HOME/.config/bspwm $HOME/old_dotfiles/
 mv $HOME/.config/sxhkd $HOME/old_dotfiles/
