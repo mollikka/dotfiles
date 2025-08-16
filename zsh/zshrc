@@ -98,7 +98,7 @@ alias date='date "+%Y-%m-%d %H:%M:%S"'
 
 # watch scripts
 function w() {
-  watch -t --color "date '+%Y-%m-%d %H:%M:%S'; $* | cut -c 1-$COLUMNS"
+  watch -t --color "date '+%Y-%m-%d %H:%M:%S'; $*"
 }
 
 ## PLUGINS
