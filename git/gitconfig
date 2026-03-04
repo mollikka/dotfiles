@@ -35,3 +35,5 @@
         fixup = commit --amend --no-edit
 [init]
         defaultBranch = trunk
+[interactive]
+	singleKey = true
