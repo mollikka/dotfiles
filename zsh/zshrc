@@ -101,11 +101,21 @@ alias tree="find . -maxdepth 2 -not -path '*/\.*' -print | sed -e 's;[^/]*/;|___
 ## PLUGINS
 
 #syntax highlight plugin
-source ~/.zshplugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zshplugins/zsh-history-substring-search.git/zsh-history-substring-search.zsh
 source ~/.zshplugins/zsh-autosuggestions.git/zsh-autosuggestions.zsh
+source ~/.zshplugins/zsh-vi-mode.git/zsh-vi-mode.zsh
+source ~/.zshplugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main)
 
+if (( ${+key} )); then
+  bindkey "${key[Up]}"   history-substring-search-up
+  bindkey "${key[Down]}" history-substring-search-down
+else
+  bindkey '^[[A' history-substring-search-up
+  bindkey '^[[B' history-substring-search-down
+fi
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#9999ff"
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 #LOCAL ZSH SETTINGS
 LOCALS=~/dotfiles/zsh/localrc
 if [ -f $LOCALS ]; then
