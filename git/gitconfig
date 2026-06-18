@@ -26,3 +26,5 @@
 
         bs = "!f() { git b; echo ''; git s;}; f"
         sb = bs
+[interactive]
+        singleKey = true
