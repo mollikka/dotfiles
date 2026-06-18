@@ -6,8 +6,6 @@ Notice the original links in many of the config files.
 
 ## Setup
 
-1. `cd`
 1. `git clone git@github.com:mollikka/dotfiles.git`
 2. `cd dotfiles`
-3. `bash installstuff.sh`
-4. `bash setup.sh`
+3. `bash setup.sh`
