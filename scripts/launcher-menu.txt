@@ -1,0 +1,6 @@
+qutebrowser
+obsidian
+darktable
+urxvt
+firefox
+inkscape

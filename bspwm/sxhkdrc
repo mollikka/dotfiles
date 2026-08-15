@@ -6,10 +6,43 @@ bspc config pointer_action2 resize_corner
 # Program Launchers
 super + t
     urxvt
+super + b
+    qutebrowser
+super + o
+    urxvt -e "$HOME/dotfiles/scripts/launcher.sh" "$HOME/dotfiles/scripts/launcher-menu.txt"
+super + p
+    urxvt -e "$HOME/dotfiles/scripts/launcher.sh"
+super + w
+    urxvt -e "nmtui"
+
+super + F1
+    $HOME/dotfiles/scripts/edit-volume.sh 0
+
+super + F2
+    $HOME/dotfiles/scripts/edit-volume.sh 0.1-
+
+super + F3
+    $HOME/dotfiles/scripts/edit-volume.sh 0.1+
+
+# Info popups
+super + shift + F23
+  $HOME/dotfiles/scripts/status.sh
+
+# Quit/restart bspwm
+super + F4
+    bspc quit
 
 # Close a client
 super + q
   bspc node -c
+
+# Minimize client
+super + m
+  $HOME/dotfiles/bspwm/bspc-minimize.sh
+
+# Restore client
+super + shift + m
+  urxvt -e "$HOME/dotfiles/bspwm/bspc-restore-menu.sh"
 
 # Float client
 super + F10
