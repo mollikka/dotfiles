@@ -31,6 +31,6 @@ URxvt.keysym.Shift-Down: command:\033]721;1\007
 !! clipboard
 URxvt.perl-ext-common: default,clipboard
 URxvt.keysym.A-c: perl:clipboard:copy
-URxvt.keysym.C-v: perl:clipboard:paste
+URxvt.keysym.A-v: perl:clipboard:paste
 
 Xcursor.theme: Adwaita

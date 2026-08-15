@@ -35,4 +35,9 @@ fi
 setxkbmap fi -option ctrl:nocaps
 
 sxhkd &
+dunst &
+unclutter &
+
+xinput set-prop "FTCS0038:00 2808:0106 Touchpad" "libinput Tapping Enabled" 1
+xinput set-prop "FTCS0038:00 2808:0106 Touchpad" "libinput Natural Scrolling Enabled" 1 &
 exec bspwm
