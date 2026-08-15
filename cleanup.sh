@@ -16,3 +16,4 @@ mv $HOME/.gitconfig $HOME/old_dotfiles/
 mv $HOME/.xinitrc $HOME/old_dotfiles/
 mv $HOME/.config/bspwm $HOME/old_dotfiles/
 mv $HOME/.config/sxhkd $HOME/old_dotfiles/
+mv $HOME/.config/qutebrowser/config.py $HOME/old_dotfiles/qutebrowser_config.py
