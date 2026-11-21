@@ -1,8 +1,3 @@
-# Move floating clients with the mouse
-bspc config pointer_modifier super
-bspc config pointer_action1 move
-bspc config pointer_action2 resize_corner
-
 # Program Launchers
 super + t
     urxvt
