@@ -4,3 +4,4 @@ darktable
 urxvt
 firefox
 inkscape
+spotify-launcher
